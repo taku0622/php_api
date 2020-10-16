@@ -3,7 +3,12 @@
 header('Content-Type: application/json; charset=UTF-8');
 
 $param = htmlspecialchars($_GET["text"]);
-$arr["text"] = urldecode($param);
+if ($arr["text"] == "info") {
+  $arr["text"] = "新着情報はこちらです";
+} else {
+  $arr["text"] = $param;
+}
+
 // echo gettype($param);
 print json_encode($arr, JSON_PRETTY_PRINT);
 // numが存在するかつnumが数字のみで構成されているか
