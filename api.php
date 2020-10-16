@@ -3,7 +3,7 @@
 header('Content-Type: application/json; charset=UTF-8');
 
 $param = htmlspecialchars($_GET["text"]);
-if ($arr["text"] == "info") {
+if ($param == "info") {
   $arr["text"] = "新着情報はこちらです";
 } else {
   $arr["text"] = $param;
