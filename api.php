@@ -10,7 +10,8 @@ if ($param == "info") {
 }
 
 // echo gettype($param);
-print json_encode($arr, JSON_PRETTY_PRINT);
+print json_encode($arr, JSON_UNESCAPED_UNICODE);
+// print json_encode($arr, JSON_PRETTY_PRINT);
 // numが存在するかつnumが数字のみで構成されているか
 // if (isset($_GET["num"]) && !preg_match('/[^0-9]/', $_GET["num"])) {
 //   // numをエスケープ(xss対策)
