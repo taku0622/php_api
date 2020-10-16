@@ -3,7 +3,8 @@
 header('Content-Type: application/json; charset=UTF-8');
 
 $param = htmlspecialchars($_GET["text"]);
-echo gettype($param);
+$arr["text"] = $param;
+// echo gettype($param);
 print json_encode($arr, JSON_PRETTY_PRINT);
 // numが存在するかつnumが数字のみで構成されているか
 // if (isset($_GET["num"]) && !preg_match('/[^0-9]/', $_GET["num"])) {
