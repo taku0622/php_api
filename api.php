@@ -4,6 +4,7 @@ header('Content-Type: application/json; charset=UTF-8');
 
 // $param = htmlspecialchars($_POST["text"]);
 $param = $_POST["text"];
+
 if ($param == "info") {
   $arr["text"] = "新着情報はこちらです";
 } else {
@@ -31,3 +32,4 @@ print json_encode($arr, JSON_UNESCAPED_UNICODE);
 // // 配列をjson形式にデコードして出力, 第二引数は、整形するためのオプション
 // print json_encode($arr, JSON_PRETTY_PRINT);
 error_log("text: " . $param);
+error_log(gettype($param));
