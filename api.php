@@ -2,8 +2,8 @@
 // 文字コード設定
 header('Content-Type: application/json; charset=UTF-8');
 
-// $param = htmlspecialchars($_POST["/api.php"]);
-$param = $_POST["/api.php"];
+// $param = htmlspecialchars($_POST["text"]);
+$param = $_POST["text"];
 if ($param == "info") {
   $arr["text"] = "新着情報はこちらです";
 } else {
