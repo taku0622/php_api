@@ -14,9 +14,10 @@ $contents = json_decode($json);
 // $contents = json_decode($json, true);
 
 // デバッグ用にダンプ
-var_dump($contents);
 error_log(gettype($contents));
 error_log($contents);
+error_log(var_dump($contents));
+
 
 ####################################
 // if ($param == "info") {
