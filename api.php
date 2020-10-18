@@ -10,7 +10,8 @@ $json = file_get_contents("php://input");
 
 // JSON文字列をobjectに変換
 //   ⇒ 第2引数をtrueにしないとハマるので注意
-$contents = json_decode($json, true);
+$contents = json_decode($json);
+// $contents = json_decode($json, true);
 
 // デバッグ用にダンプ
 var_dump($contents);
