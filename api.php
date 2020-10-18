@@ -3,7 +3,7 @@
 header('Content-Type: application/json; charset=UTF-8');
 
 // $param = htmlspecialchars($_POST["text"]);
-$param = $_POST["/api.php"];
+$param = $_POST["name"];
 
 if ($param == "info") {
   $arr["text"] = "新着情報はこちらです";
