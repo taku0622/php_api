@@ -3,16 +3,29 @@
 header('Content-Type: application/json; charset=UTF-8');
 
 // $param = htmlspecialchars($_POST["text"]);
-$param = $_POST["name"];
+// $param = $_POST["name"];
+######################################
+// POSTされたJSON文字列を取り出し
+$json = file_get_contents("php://input");
 
-if ($param == "info") {
-  $arr["text"] = "新着情報はこちらです";
-} else {
-  $arr["text"] = $param;
-}
+// JSON文字列をobjectに変換
+//   ⇒ 第2引数をtrueにしないとハマるので注意
+$contents = json_decode($json, true);
+
+// デバッグ用にダンプ
+var_dump($contents);
+error_log(gettype($contents));
+error_log($contents);
+
+####################################
+// if ($param == "info") {
+//   $arr["text"] = "新着情報はこちらです";
+// } else {
+//   $arr["text"] = $param;
+// }
 
 // echo gettype($param);
-print json_encode($arr, JSON_UNESCAPED_UNICODE);
+// print json_encode($arr, JSON_UNESCAPED_UNICODE);
 // print json_encode($arr, JSON_PRETTY_PRINT);
 // numが存在するかつnumが数字のみで構成されているか
 // if (isset($_GET["num"]) && !preg_match('/[^0-9]/', $_GET["num"])) {
@@ -31,5 +44,4 @@ print json_encode($arr, JSON_UNESCAPED_UNICODE);
 
 // // 配列をjson形式にデコードして出力, 第二引数は、整形するためのオプション
 // print json_encode($arr, JSON_PRETTY_PRINT);
-error_log("text: " . $param);
-error_log(gettype($param));
+// error_log("text: " . $param);
