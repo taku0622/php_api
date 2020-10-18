@@ -29,4 +29,4 @@ print json_encode($arr, JSON_UNESCAPED_UNICODE);
 
 // // 配列をjson形式にデコードして出力, 第二引数は、整形するためのオプション
 // print json_encode($arr, JSON_PRETTY_PRINT);
-error_log($param);
+error_log(var_dump($param));
