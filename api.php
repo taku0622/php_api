@@ -1,6 +1,6 @@
 <?php
 // 文字コード設定
-header('Content-Type: application/json; charset=UTF-8');
+// header('Content-Type: application/json; charset=UTF-8');
 
 // $param = htmlspecialchars($_POST["text"]);
 // $param = $_POST["name"];
@@ -9,10 +9,15 @@ header('Content-Type: application/json; charset=UTF-8');
 $json = file_get_contents("php://input");
 
 if (!empty($json)) {
+  $obj = json_decode($json);
   error_log("json is exist");
-  error_log(gettype($json));
-  error_log($json);
-  error_log(var_dump($json));
+  $text = $obj->events[0]->message->text;
+  if ($text == "あ") {
+    $obj->events[0]->message->text = "い";
+  }
+  error_log(print_r($obj));
+} else {
+  error_log('json is "not" exist');
 }
 // JSON文字列をobjectに変換
 //   ⇒ 第2引数をtrueにしないとハマるので注意
