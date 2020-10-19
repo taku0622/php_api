@@ -23,12 +23,12 @@ if (!empty($json)) {
 // JSON文字列をobjectに変換
 //   ⇒ 第2引数をtrueにしないとハマるので注意
 // $contents = json_decode($json);
-$contents = json_decode($json, true);
+// $contents = json_decode($json, true);
 
 // デバッグ用にダンプ
-error_log(gettype($contents));
-error_log($contents);
-error_log(var_dump($contents));
+// error_log(gettype($contents));
+// error_log($contents);
+// error_log(var_dump($contents));
 
 
 ####################################
