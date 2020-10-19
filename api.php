@@ -16,7 +16,7 @@ if (!empty($json)) {
     $obj->events[0]->message->text = "い";
   }
   // error_log(print_r($obj));
-  error_log(json_encode($obj));
+  error_log(json_encode($obj, JSON_UNESCAPED_UNICODE));
 } else {
   error_log('json is "not" exist');
 }
