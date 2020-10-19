@@ -10,6 +10,9 @@ $json = file_get_contents("php://input");
 
 if (!empty($json)) {
   error_log("json is exist");
+  error_log(gettype($json));
+  error_log($json);
+  error_log(var_dump($json));
 }
 // JSON文字列をobjectに変換
 //   ⇒ 第2引数をtrueにしないとハマるので注意
