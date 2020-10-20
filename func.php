@@ -6,7 +6,7 @@ function post($url, $object)
   $json = json_encode($object);
 
   // 送信の準備
-  $curl = curl_init("https://bot-php-api.herokuapp.com/api.php");
+  $curl = curl_init("https://dashboard.heroku.com/apps/chatbot-1015-b");
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
   // curl_setopt($curl, CURLOPT_HTTPHEADER, [
