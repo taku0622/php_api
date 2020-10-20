@@ -11,11 +11,11 @@ $input = file_get_contents('php://input');
 if (!empty($input)) {
   // イベントの取得
   $events = json_decode($input)->events;
-
   // 各イベントに対するBotプログラムの実行
   foreach ($events as $event) {
     try {
       // botの実行
+      error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
       bot($event);
     } catch (Exception $e) {
       // エラーMsg作成
