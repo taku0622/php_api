@@ -6,13 +6,14 @@ function post($url, $object)
   $json = json_encode($object);
 
   // 送信の準備
+  // リクエストヘッダー 設定
+  $headers = array(
+    "Content-Type: application/json",
+  );
   $curl = curl_init("https://dashboard.heroku.com/apps/chatbot-1015-b");
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
-  // curl_setopt($curl, CURLOPT_HTTPHEADER, [
-  //   'Content-Type: application/json',
-  //   'Authorization: Bearer ' . TOKEN
-  // ]);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
   error_log(gettype($curl));
   error_log("finish");
   error_log("finish");
