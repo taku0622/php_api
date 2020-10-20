@@ -1,6 +1,6 @@
 <?php
 // LINEサーバへ送信実行関数
-function post($url, $object)
+function post($object)
 {
   // JSON形式への変換
   $json = json_encode($object);
@@ -14,9 +14,6 @@ function post($url, $object)
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-  error_log(gettype($curl));
-  error_log("finish");
-  error_log("finish");
 
   // 送信の実行
   $result = curl_exec($curl);
