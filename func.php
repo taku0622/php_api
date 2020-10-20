@@ -1,0 +1,35 @@
+<?php
+// LINEサーバへ送信実行関数
+function post($url, $object)
+{
+  // JSON形式への変換
+  $json = json_encode($object);
+
+  // 送信の準備
+  $curl = curl_init(LINE_URL . $url);
+  curl_setopt($curl, CURLOPT_POST, true);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . TOKEN
+  ]);
+
+  // 送信の実行
+  $result = curl_exec($curl);
+
+  // 送信の終了
+  curl_close($curl);
+}
+
+// LINEサーバへの送信データ生成関数
+function reply($event, $text)
+{
+  // 送信のデータの作成
+  $object = [
+    'replyToken' => $event->replyToken,
+    'messages' => [['type' => 'text', 'text' => $text]]
+  ];
+
+  // 送信実行
+  post('reply', $object);
+}
