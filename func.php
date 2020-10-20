@@ -13,6 +13,7 @@ function post($url, $object)
     'Content-Type: application/json',
     'Authorization: Bearer ' . TOKEN
   ]);
+  error_log("finish");
 
   // 送信の実行
   $result = curl_exec($curl);
