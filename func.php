@@ -2,10 +2,7 @@
 function new_info()
 {
   $arr = ["新着情報1", "新着情報2"];
-  $object = [
-    'to' => '<to: string>',
-    'messages' => $arr
-  ];
+  return $arr;
 }
 
 // LINEサーバへ送信実行関数
@@ -37,7 +34,7 @@ function reply($event, $text)
   // 送信のデータの作成
   switch ($text) {
     case "新着情報":
-      new_info();
+      $text = new_info();
       break;
     default:
       break;
@@ -46,10 +43,10 @@ function reply($event, $text)
   //   'replyToken' => $event->replyToken,
   //   'messages' => [['type' => 'text', 'text' => $text]]
   // ];
-  // $object = [
-  //   'to' => '<to: string>',
-  //   'messages' => $text
-  // ];
+  $object = [
+    'to' => '<to: string>',
+    'messages' => $text
+  ];
   error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信実行
   post($object);
