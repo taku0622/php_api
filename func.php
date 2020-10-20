@@ -13,7 +13,7 @@ function post($url, $object)
     'Content-Type: application/json',
     'Authorization: Bearer ' . TOKEN
   ]);
-  error_log($curl);
+  error_log(gettype($curl));
   error_log("finish");
   error_log("finish");
 
