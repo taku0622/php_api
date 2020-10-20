@@ -1,4 +1,9 @@
 <?php
+function new_info()
+{
+  return "新着情報はこちらです";
+}
+
 // LINEサーバへ送信実行関数
 function post($object)
 {
@@ -26,6 +31,13 @@ function post($object)
 function reply($event, $text)
 {
   // 送信のデータの作成
+  switch ($text) {
+    case "新着情報":
+      $text = new_info();
+      break;
+    default:
+      break;
+  }
   $object = [
     'replyToken' => $event->replyToken,
     'messages' => [['type' => 'text', 'text' => $text]]
