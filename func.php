@@ -10,7 +10,7 @@ function post($url, $object)
   $headers = array(
     "Content-Type: application/json",
   );
-  $curl = curl_init("https://chatbot-1015-b.herokuapp.com");
+  $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
