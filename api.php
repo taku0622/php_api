@@ -29,6 +29,24 @@ if (!empty($json)) {
 // error_log(gettype($contents));
 // error_log($contents);
 // error_log(var_dump($contents));
+// 送信の準備
+// LINE URL
+define('LINE_URL', 'https://api.line.me/v2/bot/message/');
+// LINE アクセストークン
+define('TOKEN', 'ZXNnnoB0kR4hzsILRmOxGh64NeDMhqIxS3k51aTvElV/PZQOo+ioQzbuutnsXa2B3hLWusCKjvxpHNt9Y8b1TuNAfL2VWlqCi237Hm1VQdZoql70rVNEjXe6wjadi2kUwICr3YqdKfYHz7OcLvoBhgdB04t89/1O/w1cDnyilFU=');
+$curl = curl_init(LINE_URL . $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
+curl_setopt($curl, CURLOPT_HTTPHEADER, [
+  'Content-Type: application/json',
+  'Authorization: Bearer ' . TOKEN
+]);
+
+// 送信の実行
+$result = curl_exec($curl);
+
+// 送信の終了
+curl_close($curl);
 
 
 ####################################
