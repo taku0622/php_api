@@ -29,7 +29,7 @@ function reply($event, $text)
     'replyToken' => $event->replyToken,
     'messages' => [['type' => 'text', 'text' => $text]]
   ];
-
+  error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信実行
   post('reply', $object);
 }
