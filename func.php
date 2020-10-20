@@ -9,10 +9,10 @@ function post($url, $object)
   $curl = curl_init("https://bot-php-api.herokuapp.com/api.php");
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
-  curl_setopt($curl, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . TOKEN
-  ]);
+  // curl_setopt($curl, CURLOPT_HTTPHEADER, [
+  //   'Content-Type: application/json',
+  //   'Authorization: Bearer ' . TOKEN
+  // ]);
   error_log(gettype($curl));
   error_log("finish");
   error_log("finish");
