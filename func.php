@@ -32,5 +32,5 @@ function reply($event, $text)
   ];
   error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信実行
-  post('reply', $object);
+  post($object);
 }
