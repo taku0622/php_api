@@ -37,7 +37,7 @@ function reply($event, $text)
   // 送信のデータの作成
   switch ($text) {
     case "新着情報":
-      $object = new_info();
+      new_info();
       break;
     default:
       break;
