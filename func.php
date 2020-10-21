@@ -52,7 +52,7 @@ function reply($event, $text)
   //   'messages' => [['type' => 'text', 'text' => $text]]
   // ];
   $object = [
-    'to' => '<to: string>',
+    'to' => '$event->replyToken',
     'messages' => $text
   ];
   error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
