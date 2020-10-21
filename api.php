@@ -15,7 +15,7 @@ if (!empty($input)) {
   foreach ($events as $event) {
     try {
       // botの実行
-      error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
+      // error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
       bot($event);
     } catch (Exception $e) {
       // エラーMsg作成

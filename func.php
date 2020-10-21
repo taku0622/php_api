@@ -55,7 +55,7 @@ function reply($event, $text)
     'to' => $event->replyToken,
     'messages' => $text
   ];
-  error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
+  // error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信実行
   post($object);
 }
