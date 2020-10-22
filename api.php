@@ -38,8 +38,7 @@ function new_info()
 function post($object)
 {
   // JSON形式への変換
-  $json = json_encode($object);
-  echo $json;
+  $json = json_encode($object, JSON_UNESCAPED_UNICODE);
   // 送信の準備
   // リクエストヘッダー 設定
   $headers = array(
@@ -65,7 +64,7 @@ function post($object)
   $result2 = curl_exec($curl);
   // 送信の終了
   curl_close($curl);
-
+  sleep(10);
   header("Content-Type: text/javascript; charset=utf-8");
   echo json_encode($object, JSON_UNESCAPED_UNICODE); // 配列をJSON形式に変換してくれる
   error_log("done echo!!!!");
