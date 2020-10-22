@@ -68,8 +68,7 @@ function post($object)
   header("Content-Type: text/javascript; charset=utf-8");
   echo json_encode($object, JSON_UNESCAPED_UNICODE); // 配列をJSON形式に変換してくれる
   error_log("done echo!!!!");
-  sleep(10);
-  exit();
+  // exit();
 }
 
 // LINEサーバへの送信データ生成関数
