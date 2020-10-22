@@ -67,7 +67,7 @@ function post($object)
   curl_close($curl);
 
   header("Content-Type: text/javascript; charset=utf-8");
-  echo json_encode($object); // 配列をJSON形式に変換してくれる
+  echo json_encode($object, JSON_UNESCAPED_UNICODE); // 配列をJSON形式に変換してくれる
   error_log("done echo!!!!");
   exit();
 }
