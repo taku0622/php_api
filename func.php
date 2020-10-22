@@ -18,6 +18,7 @@ function post($object)
   );
   // $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
   $curl = curl_init("https://tut-line-bot-test.glitch.me/push");
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -27,6 +28,7 @@ function post($object)
   curl_close($curl);
 
   $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
