@@ -1,7 +1,7 @@
 <?php
 //  共通ファイル読み込み
 require_once('func.php');
-require_once('var.php');
+// require_once('var.php');
 require_once('bot_func.php');
 
 // リクエストの取得
