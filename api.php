@@ -68,6 +68,7 @@ function post($object)
 
   header("Content-Type: text/javascript; charset=utf-8");
   echo json_encode($object); // 配列をJSON形式に変換してくれる
+  error_log("done echo!!!!");
   exit();
 }
 
