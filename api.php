@@ -64,10 +64,11 @@ function post($object)
   $result2 = curl_exec($curl);
   // 送信の終了
   curl_close($curl);
-  sleep(10);
+
   header("Content-Type: text/javascript; charset=utf-8");
   echo json_encode($object, JSON_UNESCAPED_UNICODE); // 配列をJSON形式に変換してくれる
   error_log("done echo!!!!");
+  sleep(10);
   exit();
 }
 
