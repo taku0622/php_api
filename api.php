@@ -1,7 +1,4 @@
 <?php
-//  共通ファイル読み込み
-// require_once('func.php');
-// require_once('bot_func.php');
 
 // リクエストの取得
 $input = file_get_contents('php://input');
@@ -68,6 +65,10 @@ function post($object)
   $result2 = curl_exec($curl);
   // 送信の終了
   curl_close($curl);
+
+  header("Content-Type: text/javascript; charset=utf-8");
+  echo json_encode($object); // 配列をJSON形式に変換してくれる
+  exit();
 }
 
 // LINEサーバへの送信データ生成関数
