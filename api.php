@@ -1,4 +1,9 @@
 <?php
+$object = [
+  'to' => $event->replyToken,
+  'messages' => $text
+];
+$json = json_encode($object, JSON_UNESCAPED_UNICODE);
 
 // リクエストの取得
 $input = file_get_contents('php://input');
