@@ -1,4 +1,10 @@
 <?php
+// $object = [
+//   'to' => $event->replyToken,
+//   'messages' => $text
+// ];
+// echo json_encode($object, JSON_UNESCAPED_UNICODE);
+
 // リクエストの取得
 $input = file_get_contents('php://input');
 
@@ -27,23 +33,17 @@ function bot($event)
   reply($event, $text);
 }
 
-// function new_info($event)
-// {
-//   $ans = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
-//   $object = [
-//     'replyToken' => $event->replyToken,
-//     'messages' => [['type' => 'text', 'text' => $ans]]
-//   ];
-//   error_log("this is " . json_encode($event, JSON_UNESCAPED_UNICODE));
-//   return $object;
-// }
+function new_info()
+{
+  $arr = "新着情報1\n新着情報2\n新着情報3\n新着情報4";
+  return $arr;
+}
 
 // LINEサーバへ送信実行関数
 function post($object)
 {
   // JSON形式への変換
   $json = json_encode($object, JSON_UNESCAPED_UNICODE);
-  error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信の準備
   // リクエストヘッダー 設定
   $headers = array(
@@ -68,51 +68,104 @@ function post($object)
   curl_setopt($curl, CURLOPT_POST, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-  // 送信の実行
-  $result2 = curl_exec($curl);
-  // 送信の終了
-  curl_close($curl);
-// }
+  // // 送信の実行
+  // $result2 = curl_exec($curl);
+  // // 送信の終了
+  // curl_close($curl);
 
-//   $url = 'https://tut-line-bot-test.glitch.me/push';
+  // header("Content-Type: text/javascript; charset=utf-8");
+  // echo json_encode($object, JSON_UNESCAPED_UNICODE); // 配列をJSON形式に変換してくれる
+  // error_log("done echo!!!!");
+  // // exit();
 
-//   $contents_array = post_request($url, $json);
-// }
-// function post_request($url, $json)
-// {
-//   // $json = array(
-//   //   'id' => 100,
-//   //   'msg' => 'hey'
-//   // );
-//   //curlおじさんを初期化
-//   $ch = curl_init();
-//   //配列をhttp_build_queryでエンコードしてあげること
-//   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
+  ################################################
+  // $url = 'https://tut-line-bot-test.glitch.me/push';
 
-//   //上記で述べたピア問題
-//   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  // $ch = curl_init($url);
 
-//   //相手側からのデータの返り値を文字列で取得
-//   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  // curl_setopt(
+  //   $ch,
+  //   CURLOPT_POST,
+  //   TRUE
+  // );                            //POSTで送信
+  // curl_setopt(
+  //   $ch,
+  //   CURLOPT_POSTFIELDS,
+  //   http_build_query($json)
+  // );    //データをセット
+  // curl_setopt(
+  //   $ch,
+  //   CURLOPT_RETURNTRANSFER,
+  //   TRUE
+  // );                    //受け取ったデータを変数に
+  // $html = curl_exec($ch);
 
-//   //TRUE を設定すると、ヘッダの内容も出力します。
-//   // curl_setopt($ch, CURLOPT_HEADER, 1);
+  // if (curl_errno($ch)) {        //curlでエラー発生
+  //   $CURLERR .= 'curl_errno：' . curl_errno($ch) . "\n";
+  //   $CURLERR .= 'curl_error：' . curl_error($ch) . "\n";
+  //   $CURLERR .= '▼curl_getinfo' . "\n";
+  //   foreach (curl_getinfo($ch) as $key => $val) {
+  //     $CURLERR .= '■' . $key . '：' . $val . "\n";
+  //   }
+  //   echo nl2br($CURLERR);
+  // }
+  // curl_close($ch);
+  // echo $html;
+  ##############################################################
+  $url = 'https://tut-line-bot-test.glitch.me/push';
 
-//   //Content-Typeとユーザエージェントを指定
-//   $headers = array(
-//     "Content-Type: application/x-www-form-urlencoded",
-//     "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
-//   );
-//   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  $contents_array = post_request($url, $json);
+}
+function post_request($url, $json)
+{
+  $json = array(
+    'id' => 100,
+    'msg' => 'hey'
+  );
+  //curlおじさんを初期化
+  $ch = curl_init();
+  //配列をhttp_build_queryでエンコードしてあげること
+  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
 
-//   //送信先の指定
-//   curl_setopt($ch, CURLOPT_URL, $url);
-//   //curlおじさん実行
-//   $response_json = curl_exec($ch);
-//   $result = json_decode($response_json);
-//   //curlおじさんを閉じる
-//   curl_close($ch);
-// }
+  //上記で述べたピア問題
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+
+  //相手側からのデータの返り値を文字列で取得
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+  //TRUE を設定すると、ヘッダの内容も出力します。
+  // curl_setopt($ch, CURLOPT_HEADER, 1);
+
+  //Content-Typeとユーザエージェントを指定
+  $headers = array(
+    "Content-Type: application/x-www-form-urlencoded",
+    "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
+  );
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+  //送信先の指定
+  curl_setopt($ch, CURLOPT_URL, $url);
+  //curlおじさん実行
+  $response_json = curl_exec($ch);
+  $result = json_decode($response_json);
+  //curlおじさんを閉じる
+  curl_close($ch);
+
+  ##########################################################
+  $data = http_build_query(array('foo' => 'bar', 'name' => 'やまだ', 'age' => '123'), '', '&');
+  $options = array(
+    'http' => array(
+      'method' => 'POST',
+      'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+        . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
+        . "Content-Length: " . strlen($data) . "\r\n",
+      'content' => $data
+    )
+  );
+  $context = stream_context_create($options);
+  $response = file_get_contents('https://bot-php-api.herokuapp.com/', false, $context);
+  ##########################################################
+}
 
 // LINEサーバへの送信データ生成関数
 function reply($event, $text)
@@ -120,24 +173,20 @@ function reply($event, $text)
   // 送信のデータの作成
   switch ($text) {
     case "新着情報":
-      $text = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
-      $object = [
-        'replyToken' => $event->replyToken,
-        'messages' => [['type' => 'text', 'text' => $text]]
-      ];
-      error_log("this is " . json_encode($object, JSON_UNESCAPED_UNICODE));
+      $text = new_info();
       break;
     default:
       break;
   }
-  // $object = [
-  //   'replyToken' => $event->replyToken,
-  //   'messages' => [['type' => 'text', 'text' => $text]]
-  // ];
+  $object = [
+    'replyToken' => $event->replyToken,
+    'messages' => [['type' => 'text', 'text' => $text]]
+  ];
   // $object = [
   //   'to' => $event->replyToken,
-  //   'messages' => [['type' => 'text', 'text' => $text]]
+  //   'messages' => $text
   // ];
+  error_log("this is :" . json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信実行
   post($object);
 }
