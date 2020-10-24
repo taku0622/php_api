@@ -73,6 +73,34 @@ function post($object)
   // 送信の終了
   curl_close($curl);
 
+  $headers = array(
+    "Content-Type: application/json",
+  );
+  $curl = curl_init("https://bot-php-api.herokuapp.com/api3.php");
+  curl_setopt(
+    $curl,
+    CURLOPT_RETURNTRANSFER,
+    TRUE
+  );
+  curl_setopt(
+    $curl,
+    CURLOPT_POST,
+    true
+  );
+  curl_setopt(
+    $curl,
+    CURLOPT_POSTFIELDS,
+    $json
+  );
+  curl_setopt(
+    $curl,
+    CURLOPT_HTTPHEADER,
+    $headers
+  );
+  // 送信の実行
+  $result2 = curl_exec($curl);
+  // 送信の終了
+  curl_close($curl);
   // header("Content-Type: text/javascript; charset=utf-8");
   // echo json_encode($object, JSON_UNESCAPED_UNICODE); // 配列をJSON形式に変換してくれる
   // error_log("done echo!!!!");
@@ -152,18 +180,18 @@ function post_request($url, $json)
   curl_close($ch);
 
   ##########################################################
-  $data = http_build_query(array('foo' => 'bar', 'name' => 'やまだ', 'age' => '123'), '', '&');
-  $options = array(
-    'http' => array(
-      'method' => 'POST',
-      'header' => "Content-type: application/x-www-form-urlencoded\r\n"
-        . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
-        . "Content-Length: " . strlen($data) . "\r\n",
-      'content' => $data
-    )
-  );
-  $context = stream_context_create($options);
-  $response = file_get_contents('https://bot-php-api.herokuapp.com/api3.php', false, $context);
+  // $data = http_build_query(array('foo' => 'bar', 'name' => 'やまだ', 'age' => '123'), '', '&');
+  // $options = array(
+  //   'http' => array(
+  //     'method' => 'POST',
+  //     'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+  //       . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
+  //       . "Content-Length: " . strlen($data) . "\r\n",
+  //     'content' => $data
+  //   )
+  // );
+  // $context = stream_context_create($options);
+  // $response = file_get_contents('https://bot-php-api.herokuapp.com/api3.php', false, $context);
   ##########################################################
 }
 
