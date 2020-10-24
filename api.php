@@ -34,7 +34,7 @@ function new_info($event)
     'replyToken' => $event->replyToken,
     'messages' => [['type' => 'text', 'text' => $text]]
   ];
-  error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
+  error_log("this is " . json_encode($event, JSON_UNESCAPED_UNICODE));
   return $object;
 }
 
