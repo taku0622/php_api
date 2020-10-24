@@ -29,10 +29,10 @@ function bot($event)
 
 function new_info($event)
 {
-  $text = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
+  $ans = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
   $object = [
     'replyToken' => $event->replyToken,
-    'messages' => [['type' => 'text', 'text' => $text]]
+    'messages' => [['type' => 'text', 'text' => $ans]]
   ];
   error_log("this is " . json_encode($event, JSON_UNESCAPED_UNICODE));
   return $object;
