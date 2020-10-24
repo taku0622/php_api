@@ -224,15 +224,13 @@ function cancel_info()
 function event_info()
 {
   $messages = [
-    [
-    "type": "text",
-    "text": "今後のイベントはこのようになっています\n
+    "type" => "text",
+    "text" =>  "今後のイベントはこのようになっています\n
     11/03(火):祝日授業開講\n
     11/14(土):補講\n
     11/23(月):祝日授業開講\n
     12月中旬:後期末試験時間割発表\n
     12/26(土)~01/04(月):冬期休業\n"
-    ]
   ];
   return $messages;
 }
