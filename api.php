@@ -1,10 +1,4 @@
 <?php
-// $object = [
-//   'to' => $event->replyToken,
-//   'messages' => $text
-// ];
-// echo json_encode($object, JSON_UNESCAPED_UNICODE);
-
 // リクエストの取得
 $input = file_get_contents('php://input');
 
@@ -35,12 +29,12 @@ function bot($event)
 
 function new_info()
 {
+  $text = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
   $object = [
-    $text = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
     'to' => $event->replyToken,
     'messages' => [['type' => 'text', 'text' => $text]]
-  ];   
-  return $arr;
+  ];
+  return $object;
 }
 
 // LINEサーバへ送信実行関数
@@ -76,46 +70,46 @@ function post($object)
   $result2 = curl_exec($curl);
   // 送信の終了
   curl_close($curl);
-
-  $url = 'https://tut-line-bot-test.glitch.me/push';
-
-  $contents_array = post_request($url, $json);
 }
-function post_request($url, $json)
-{
-  $json = array(
-    'id' => 100,
-    'msg' => 'hey'
-  );
-  //curlおじさんを初期化
-  $ch = curl_init();
-  //配列をhttp_build_queryでエンコードしてあげること
-  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
+//   $url = 'https://tut-line-bot-test.glitch.me/push';
 
-  //上記で述べたピア問題
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+//   $contents_array = post_request($url, $json);
+// }
+// function post_request($url, $json)
+// {
+//   $json = array(
+//     'id' => 100,
+//     'msg' => 'hey'
+//   );
+//   //curlおじさんを初期化
+//   $ch = curl_init();
+//   //配列をhttp_build_queryでエンコードしてあげること
+//   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
 
-  //相手側からのデータの返り値を文字列で取得
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//   //上記で述べたピア問題
+//   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-  //TRUE を設定すると、ヘッダの内容も出力します。
-  // curl_setopt($ch, CURLOPT_HEADER, 1);
+//   //相手側からのデータの返り値を文字列で取得
+//   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-  //Content-Typeとユーザエージェントを指定
-  $headers = array(
-    "Content-Type: application/x-www-form-urlencoded",
-    "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
-  );
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+//   //TRUE を設定すると、ヘッダの内容も出力します。
+//   // curl_setopt($ch, CURLOPT_HEADER, 1);
 
-  //送信先の指定
-  curl_setopt($ch, CURLOPT_URL, $url);
-  //curlおじさん実行
-  $response_json = curl_exec($ch);
-  $result = json_decode($response_json);
-  //curlおじさんを閉じる
-  curl_close($ch);
-}
+//   //Content-Typeとユーザエージェントを指定
+//   $headers = array(
+//     "Content-Type: application/x-www-form-urlencoded",
+//     "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
+//   );
+//   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+//   //送信先の指定
+//   curl_setopt($ch, CURLOPT_URL, $url);
+//   //curlおじさん実行
+//   $response_json = curl_exec($ch);
+//   $result = json_decode($response_json);
+//   //curlおじさんを閉じる
+//   curl_close($ch);
+// }
 
 // LINEサーバへの送信データ生成関数
 function reply($event, $text)
