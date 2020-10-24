@@ -27,7 +27,7 @@ function bot($event)
   reply($event, $text);
 }
 
-function new_info()
+function new_info($event)
 {
   $text = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
   $object = [
@@ -43,20 +43,20 @@ function post($object)
   // JSON形式への変換
   $json = json_encode($object, JSON_UNESCAPED_UNICODE);
   // 送信の準備
-  // // リクエストヘッダー 設定
-  // $headers = array(
-  //   "Content-Type: application/javascript",
-  // );
-  // // $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
-  // $curl = curl_init("https://tut-line-bot-test.glitch.me/push");
-  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-  // curl_setopt($curl, CURLOPT_POST, true);
-  // curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
-  // curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-  // // 送信の実行
-  // $result1 = curl_exec($curl);
-  // // 送信の終了
-  // curl_close($curl);
+  // リクエストヘッダー 設定
+  $headers = array(
+    "Content-Type: application/javascript",
+  );
+  // $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
+  $curl = curl_init("https://tut-line-bot-test.glitch.me/push");
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($curl, CURLOPT_POST, true);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+  // 送信の実行
+  $result1 = curl_exec($curl);
+  // 送信の終了
+  curl_close($curl);
 
   $headers = array(
     "Content-Type: application/json",
@@ -70,46 +70,47 @@ function post($object)
   $result2 = curl_exec($curl);
   // 送信の終了
   curl_close($curl);
-
-  $url = 'https://tut-line-bot-test.glitch.me/push';
-
-  $contents_array = post_request($url, $json);
 }
-function post_request($url, $json)
-{
-  // $json = array(
-  //   'id' => 100,
-  //   'msg' => 'hey'
-  // );
-  //curlおじさんを初期化
-  $ch = curl_init();
-  //配列をhttp_build_queryでエンコードしてあげること
-  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
 
-  //上記で述べたピア問題
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+//   $url = 'https://tut-line-bot-test.glitch.me/push';
 
-  //相手側からのデータの返り値を文字列で取得
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//   $contents_array = post_request($url, $json);
+// }
+// function post_request($url, $json)
+// {
+//   // $json = array(
+//   //   'id' => 100,
+//   //   'msg' => 'hey'
+//   // );
+//   //curlおじさんを初期化
+//   $ch = curl_init();
+//   //配列をhttp_build_queryでエンコードしてあげること
+//   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
 
-  //TRUE を設定すると、ヘッダの内容も出力します。
-  // curl_setopt($ch, CURLOPT_HEADER, 1);
+//   //上記で述べたピア問題
+//   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-  //Content-Typeとユーザエージェントを指定
-  $headers = array(
-    "Content-Type: application/x-www-form-urlencoded",
-    "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
-  );
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+//   //相手側からのデータの返り値を文字列で取得
+//   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-  //送信先の指定
-  curl_setopt($ch, CURLOPT_URL, $url);
-  //curlおじさん実行
-  $response_json = curl_exec($ch);
-  $result = json_decode($response_json);
-  //curlおじさんを閉じる
-  curl_close($ch);
-}
+//   //TRUE を設定すると、ヘッダの内容も出力します。
+//   // curl_setopt($ch, CURLOPT_HEADER, 1);
+
+//   //Content-Typeとユーザエージェントを指定
+//   $headers = array(
+//     "Content-Type: application/x-www-form-urlencoded",
+//     "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
+//   );
+//   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+//   //送信先の指定
+//   curl_setopt($ch, CURLOPT_URL, $url);
+//   //curlおじさん実行
+//   $response_json = curl_exec($ch);
+//   $result = json_decode($response_json);
+//   //curlおじさんを閉じる
+//   curl_close($ch);
+// }
 
 // LINEサーバへの送信データ生成関数
 function reply($event, $text)
@@ -117,7 +118,7 @@ function reply($event, $text)
   // 送信のデータの作成
   switch ($text) {
     case "新着情報":
-      $object = new_info();
+      $object = new_info($event);
       break;
     default:
       break;
