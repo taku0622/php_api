@@ -62,7 +62,7 @@ function reply($userId, $text)
     case "重要情報":
       $messages = important_info();
       break;
-    case "休講情報":
+    case "休講案内":
       $messages = cancel_info();
       break;
     default:

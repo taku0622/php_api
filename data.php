@@ -159,7 +159,7 @@ function cancel_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '休講情報1',
+            'title' => '休講案内1',
             'text' => 'description',
             'defaultAction' => [
               'type' => 'uri',
@@ -187,7 +187,7 @@ function cancel_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
             'imageBackgroundColor' => '#000000',
-            'title' => '休講情報2',
+            'title' => '休講案内2',
             'text' => 'description',
             'defaultAction' => [
               'type' => 'uri',
