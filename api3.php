@@ -5,4 +5,4 @@ if (!isset($json)) {
 } else {
   echo "no data";
 }
-error_log("form api3.php" . json_decode($json));
+error_log("form api3.php" . json_encode($json, JSON_UNESCAPED_UNICODE);
