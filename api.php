@@ -1,9 +1,9 @@
 <?php
-// $object = [
-//   'to' => $event->replyToken,
-//   'messages' => $text
-// ];
-// echo json_encode($object, JSON_UNESCAPED_UNICODE);
+$object = [
+  'to' => $event->replyToken,
+  'messages' => $text
+];
+echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
 // リクエストの取得
 $input = file_get_contents('php://input');
@@ -163,7 +163,7 @@ function post_request($url, $json)
     )
   );
   $context = stream_context_create($options);
-  $response = file_get_contents('https://bot-php-api.herokuapp.com/', false, $context);
+  $response = file_get_contents('https://bot-php-api.herokuapp.com/api3.php', false, $context);
   ##########################################################
 }
 
