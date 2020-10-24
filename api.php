@@ -43,6 +43,7 @@ function post($object)
 {
   // JSON形式への変換
   $json = json_encode($object, JSON_UNESCAPED_UNICODE);
+  error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信の準備
   // リクエストヘッダー 設定
   $headers = array(
@@ -71,7 +72,7 @@ function post($object)
   $result2 = curl_exec($curl);
   // 送信の終了
   curl_close($curl);
-}
+// }
 
 //   $url = 'https://tut-line-bot-test.glitch.me/push';
 
