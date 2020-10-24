@@ -112,41 +112,41 @@ function post($object)
   // curl_close($ch);
   // echo $html;
   ##############################################################
-    $url = 'https://tut-line-bot-test.glitch.me/push';
+  $url = 'https://tut-line-bot-test.glitch.me/push';
 
-    $contents_array = post_request($url, $json);
+  $contents_array = post_request($url, $json);
+}
+function post_request($url, $json)
+{
 
-  function post_request($url, $json)
-  {
+  //curlおじさんを初期化
+  $ch = curl_init();
+  //配列をhttp_build_queryでエンコードしてあげること
+  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
 
-    //curlおじさんを初期化
-    $ch = curl_init();
-    //配列をhttp_build_queryでエンコードしてあげること
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
+  //上記で述べたピア問題
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-    //上記で述べたピア問題
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  //相手側からのデータの返り値を文字列で取得
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-    //相手側からのデータの返り値を文字列で取得
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  //TRUE を設定すると、ヘッダの内容も出力します。
+  // curl_setopt($ch, CURLOPT_HEADER, 1);
 
-    //TRUE を設定すると、ヘッダの内容も出力します。
-    // curl_setopt($ch, CURLOPT_HEADER, 1);
+  //Content-Typeとユーザエージェントを指定
+  $headers = array(
+    "Content-Type: application/x-www-form-urlencoded",
+    "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
+  );
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-    //Content-Typeとユーザエージェントを指定
-    $headers = array(
-      "Content-Type: application/x-www-form-urlencoded",
-      "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
-    );
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-    //送信先の指定
-    curl_setopt($ch, CURLOPT_URL, $url);
-    //curlおじさん実行
-    $response_json = curl_exec($ch);
-    $result = json_decode($response_json);
-    //curlおじさんを閉じる
-    curl_close($ch);
+  //送信先の指定
+  curl_setopt($ch, CURLOPT_URL, $url);
+  //curlおじさん実行
+  $response_json = curl_exec($ch);
+  $result = json_decode($response_json);
+  //curlおじさんを閉じる
+  curl_close($ch);
 
   ##########################################################
 }
