@@ -163,7 +163,7 @@ function post_request($url, $json)
     )
   );
   $context = stream_context_create($options);
-  $response = file_get_contents('https://tut-line-bot-test.glitch.me', false, $context);
+  $response = file_get_contents('https://bot-php-api.herokuapp.com/api.php', false, $context);
 }
 
 // LINEサーバへの送信データ生成関数
