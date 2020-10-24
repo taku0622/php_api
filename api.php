@@ -60,18 +60,18 @@ function post($object)
   // 送信の終了
   curl_close($curl);
 
-  // $headers = array(
-  //   "Content-Type: application/json",
-  // );
-  // $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
-  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-  // curl_setopt($curl, CURLOPT_POST, true);
-  // curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
-  // curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-  // // 送信の実行
-  // $result2 = curl_exec($curl);
-  // // 送信の終了
-  // curl_close($curl);
+  $headers = array(
+    "Content-Type: application/json",
+  );
+  $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+  curl_setopt($curl, CURLOPT_POST, true);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+  // 送信の実行
+  $result2 = curl_exec($curl);
+  // 送信の終了
+  curl_close($curl);
 
   // header("Content-Type: text/javascript; charset=utf-8");
   // echo json_encode($object, JSON_UNESCAPED_UNICODE); // 配列をJSON形式に変換してくれる
@@ -164,6 +164,7 @@ function post_request($url, $json)
   );
   $context = stream_context_create($options);
   $response = file_get_contents('https://bot-php-api.herokuapp.com/', false, $context);
+  ##########################################################
 }
 
 // LINEサーバへの送信データ生成関数
