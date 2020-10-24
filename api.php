@@ -29,7 +29,7 @@ function bot($event)
 
 function new_info()
 {
-  $$messages = [['type' => 'text', 'text' => "情報1"]];
+  $messages = [['type' => 'text', 'text' => "情報1"]];
   return $messages;
 }
 
