@@ -60,7 +60,7 @@ function reply($userId, $text)
       $messages = new_info();
       break;
     case "重要情報":
-      $messages = new_info();
+      $messages = important_info();
       break;
     default:
       break;
