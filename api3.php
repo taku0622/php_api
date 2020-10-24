@@ -1,7 +1,7 @@
 <?php
 $json = file_get_contents("php://input");
 if (!isset($json)) {
-  echo $json;
+  echo $json->text;
 } else {
   echo "no data";
 }
