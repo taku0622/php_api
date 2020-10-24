@@ -118,7 +118,10 @@ function post($object)
 }
 function post_request($url, $json)
 {
-
+  $json = array(
+    'id' => 100,
+    'msg' => 'hey'
+  );
   //curlおじさんを初期化
   $ch = curl_init();
   //配列をhttp_build_queryでエンコードしてあげること
