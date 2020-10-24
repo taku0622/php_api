@@ -152,6 +152,18 @@ function post_request($url, $json)
   curl_close($ch);
 
   ##########################################################
+  $data = http_build_query(array('foo' => 'bar', 'name' => 'やまだ', 'age' => '123'), '', '&');
+  $options = array(
+    'http' => array(
+      'method' => 'POST',
+      'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+        . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
+        . "Content-Length: " . strlen($data) . "\r\n",
+      'content' => $data
+    )
+  );
+  $context = stream_context_create($options);
+  $response = file_get_contents('https://tut-line-bot-test.glitch.me', false, $context);
 }
 
 // LINEサーバへの送信データ生成関数
