@@ -1,9 +1,9 @@
 <?php
-$object = [
-  'to' => $event->replyToken,
-  'messages' => $text
-];
-echo json_encode($object, JSON_UNESCAPED_UNICODE);
+// $object = [
+//   'to' => $event->replyToken,
+//   'messages' => $text
+// ];
+// echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
 // リクエストの取得
 $input = file_get_contents('php://input');
@@ -35,7 +35,11 @@ function bot($event)
 
 function new_info()
 {
-  $arr = ["新着情報1", "新着情報2"];
+  $object = [
+    $text = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
+    'to' => $event->replyToken,
+    'messages' => [['type' => 'text', 'text' => $text]]
+  ];   
   return $arr;
 }
 
@@ -73,74 +77,6 @@ function post($object)
   // 送信の終了
   curl_close($curl);
 
-  $headers = array(
-    "Content-Type: application/json",
-  );
-  $curl = curl_init("https://bot-php-api.herokuapp.com/api3.php");
-  curl_setopt(
-    $curl,
-    CURLOPT_RETURNTRANSFER,
-    TRUE
-  );
-  curl_setopt(
-    $curl,
-    CURLOPT_POST,
-    true
-  );
-  curl_setopt(
-    $curl,
-    CURLOPT_POSTFIELDS,
-    $json
-  );
-  curl_setopt(
-    $curl,
-    CURLOPT_HTTPHEADER,
-    $headers
-  );
-  // 送信の実行
-  $result2 = curl_exec($curl);
-  // 送信の終了
-  curl_close($curl);
-  // header("Content-Type: text/javascript; charset=utf-8");
-  echo json_encode($object, JSON_UNESCAPED_UNICODE); // 配列をJSON形式に変換してくれる
-  sleep(10);
-  // error_log("done echo!!!!");
-  // // exit();
-
-  ################################################
-  // $url = 'https://tut-line-bot-test.glitch.me/push';
-
-  // $ch = curl_init($url);
-
-  // curl_setopt(
-  //   $ch,
-  //   CURLOPT_POST,
-  //   TRUE
-  // );                            //POSTで送信
-  // curl_setopt(
-  //   $ch,
-  //   CURLOPT_POSTFIELDS,
-  //   http_build_query($json)
-  // );    //データをセット
-  // curl_setopt(
-  //   $ch,
-  //   CURLOPT_RETURNTRANSFER,
-  //   TRUE
-  // );                    //受け取ったデータを変数に
-  // $html = curl_exec($ch);
-
-  // if (curl_errno($ch)) {        //curlでエラー発生
-  //   $CURLERR .= 'curl_errno：' . curl_errno($ch) . "\n";
-  //   $CURLERR .= 'curl_error：' . curl_error($ch) . "\n";
-  //   $CURLERR .= '▼curl_getinfo' . "\n";
-  //   foreach (curl_getinfo($ch) as $key => $val) {
-  //     $CURLERR .= '■' . $key . '：' . $val . "\n";
-  //   }
-  //   echo nl2br($CURLERR);
-  // }
-  // curl_close($ch);
-  // echo $html;
-  ##############################################################
   $url = 'https://tut-line-bot-test.glitch.me/push';
 
   $contents_array = post_request($url, $json);
@@ -179,21 +115,6 @@ function post_request($url, $json)
   $result = json_decode($response_json);
   //curlおじさんを閉じる
   curl_close($ch);
-
-  ##########################################################
-  // $data = http_build_query(array('foo' => 'bar', 'name' => 'やまだ', 'age' => '123'), '', '&');
-  // $options = array(
-  //   'http' => array(
-  //     'method' => 'POST',
-  //     'header' => "Content-type: application/x-www-form-urlencoded\r\n"
-  //       . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
-  //       . "Content-Length: " . strlen($data) . "\r\n",
-  //     'content' => $data
-  //   )
-  // );
-  // $context = stream_context_create($options);
-  // $response = file_get_contents('https://bot-php-api.herokuapp.com/api3.php', false, $context);
-  ##########################################################
 }
 
 // LINEサーバへの送信データ生成関数
@@ -202,7 +123,7 @@ function reply($event, $text)
   // 送信のデータの作成
   switch ($text) {
     case "新着情報":
-      $text = new_info();
+      $object = new_info();
       break;
     default:
       break;
@@ -211,11 +132,10 @@ function reply($event, $text)
   //   'replyToken' => $event->replyToken,
   //   'messages' => [['type' => 'text', 'text' => $text]]
   // ];
-  $object = [
-    'to' => $event->replyToken,
-    'messages' => $text
-  ];
-  error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
+  // $object = [
+  //   'to' => $event->replyToken,
+  //   'messages' => [['type' => 'text', 'text' => $text]]
+  // ];
   // 送信実行
   post($object);
 }
