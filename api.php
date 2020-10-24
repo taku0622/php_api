@@ -66,7 +66,7 @@ function reply($userId, $text)
       $messages = cancel_info();
       break;
     case "イベント":
-      $messages = cancel_info();
+      $messages = event_info();
       break;
     default:
       break;
