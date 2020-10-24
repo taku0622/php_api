@@ -1,4 +1,7 @@
 <?php
+//  共通ファイル読み込み
+require_once('data.php');
+
 // リクエストの取得
 $input = file_get_contents('php://input');
 
@@ -25,12 +28,6 @@ function bot($event)
   $text = $event->message->text;
   $userId = $event->source->userId;
   reply($userId, $text);
-}
-
-function new_info()
-{
-  $messages = [['type' => 'text', 'text' => "情報1"]];
-  return $messages;
 }
 
 // LINEサーバへ送信実行関数
