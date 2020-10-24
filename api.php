@@ -72,7 +72,7 @@ function reply($userId, $text)
     'to' => $userId,
     'messages' => $messages
   ];
-  error_log("this is :" . json_encode($object, JSON_UNESCAPED_UNICODE));
+  // error_log("this is :" . json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信実行
   post($object);
 }
