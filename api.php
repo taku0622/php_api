@@ -47,7 +47,7 @@ function post($object)
   // 送信の準備
   // リクエストヘッダー 設定
   $headers = array(
-    "Content-Type: application/json",
+    "Content-Type: application/javascript",
   );
   // $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
   $curl = curl_init("https://tut-line-bot-test.glitch.me/push");
@@ -60,6 +60,9 @@ function post($object)
   // 送信の終了
   curl_close($curl);
 
+  $headers = array(
+    "Content-Type: application/json",
+  );
   $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
   curl_setopt($curl, CURLOPT_POST, true);
