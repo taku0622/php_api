@@ -29,8 +29,8 @@ function bot($event)
 
 function new_info()
 {
-  $arr = [['type' => 'text', 'text' => "情報1"]];
-  return $arr;
+  $$messages = [['type' => 'text', 'text' => "情報1"]];
+  return $messages;
 }
 
 // LINEサーバへ送信実行関数
