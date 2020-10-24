@@ -59,6 +59,9 @@ function reply($userId, $text)
     case "新着情報":
       $messages = new_info();
       break;
+    case "重要情報":
+      $messages = new_info();
+      break;
     default:
       break;
   }
