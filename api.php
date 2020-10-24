@@ -76,76 +76,76 @@ function post($object)
   // exit();
 
   ################################################
-  $url = 'https://tut-line-bot-test.glitch.me/push';
+  // $url = 'https://tut-line-bot-test.glitch.me/push';
 
-  $ch = curl_init($url);
+  // $ch = curl_init($url);
 
-  curl_setopt(
-    $ch,
-    CURLOPT_POST,
-    TRUE
-  );                            //POSTで送信
-  curl_setopt(
-    $ch,
-    CURLOPT_POSTFIELDS,
-    http_build_query($json)
-  );    //データをセット
-  curl_setopt(
-    $ch,
-    CURLOPT_RETURNTRANSFER,
-    TRUE
-  );                    //受け取ったデータを変数に
-  $html = curl_exec($ch);
+  // curl_setopt(
+  //   $ch,
+  //   CURLOPT_POST,
+  //   TRUE
+  // );                            //POSTで送信
+  // curl_setopt(
+  //   $ch,
+  //   CURLOPT_POSTFIELDS,
+  //   http_build_query($json)
+  // );    //データをセット
+  // curl_setopt(
+  //   $ch,
+  //   CURLOPT_RETURNTRANSFER,
+  //   TRUE
+  // );                    //受け取ったデータを変数に
+  // $html = curl_exec($ch);
 
-  if (curl_errno($ch)) {        //curlでエラー発生
-    $CURLERR .= 'curl_errno：' . curl_errno($ch) . "\n";
-    $CURLERR .= 'curl_error：' . curl_error($ch) . "\n";
-    $CURLERR .= '▼curl_getinfo' . "\n";
-    foreach (curl_getinfo($ch) as $key => $val) {
-      $CURLERR .= '■' . $key . '：' . $val . "\n";
-    }
-    echo nl2br($CURLERR);
-  }
-  curl_close($ch);
-  echo $html;
+  // if (curl_errno($ch)) {        //curlでエラー発生
+  //   $CURLERR .= 'curl_errno：' . curl_errno($ch) . "\n";
+  //   $CURLERR .= 'curl_error：' . curl_error($ch) . "\n";
+  //   $CURLERR .= '▼curl_getinfo' . "\n";
+  //   foreach (curl_getinfo($ch) as $key => $val) {
+  //     $CURLERR .= '■' . $key . '：' . $val . "\n";
+  //   }
+  //   echo nl2br($CURLERR);
+  // }
+  // curl_close($ch);
+  // echo $html;
   ##############################################################
-  $url = 'https://tut-line-bot-test.glitch.me/push';
-  
-  $contents_array = post_request($url, $json);
+  //   $url = 'https://tut-line-bot-test.glitch.me/push';
 
-function post_request($url, $json)
-{
+  //   $contents_array = post_request($url, $json);
 
-  //curlおじさんを初期化
-  $ch = curl_init();
-  //配列をhttp_build_queryでエンコードしてあげること
-  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
+  // function post_request($url, $json)
+  // {
 
-  //上記で述べたピア問題
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+  //   //curlおじさんを初期化
+  //   $ch = curl_init();
+  //   //配列をhttp_build_queryでエンコードしてあげること
+  //   curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($json));
 
-  //相手側からのデータの返り値を文字列で取得
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  //   //上記で述べたピア問題
+  //   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-  //TRUE を設定すると、ヘッダの内容も出力します。
-  // curl_setopt($ch, CURLOPT_HEADER, 1);
+  //   //相手側からのデータの返り値を文字列で取得
+  //   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-  //Content-Typeとユーザエージェントを指定
-  $headers = array(
-    "Content-Type: application/x-www-form-urlencoded",
-    "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
-  );
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+  //   //TRUE を設定すると、ヘッダの内容も出力します。
+  //   // curl_setopt($ch, CURLOPT_HEADER, 1);
 
-  //送信先の指定
-  curl_setopt($ch, CURLOPT_URL, $url);
-  //curlおじさん実行
-  $response_json = curl_exec($ch);
-  $result = json_decode($response_json);
-  //curlおじさんを閉じる
-  curl_close($ch);
+  //   //Content-Typeとユーザエージェントを指定
+  //   $headers = array(
+  //     "Content-Type: application/x-www-form-urlencoded",
+  //     "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
+  //   );
+  //   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-##########################################################
+  //   //送信先の指定
+  //   curl_setopt($ch, CURLOPT_URL, $url);
+  //   //curlおじさん実行
+  //   $response_json = curl_exec($ch);
+  //   $result = json_decode($response_json);
+  //   //curlおじさんを閉じる
+  //   curl_close($ch);
+
+  ##########################################################
 }
 
 // LINEサーバへの送信データ生成関数
