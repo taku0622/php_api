@@ -31,9 +31,10 @@ function new_info($event)
 {
   $text = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
   $object = [
-    'to' => $event->replyToken,
+    'replyToken' => $event->replyToken,
     'messages' => [['type' => 'text', 'text' => $text]]
   ];
+  error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
   return $object;
 }
 
