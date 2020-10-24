@@ -65,6 +65,9 @@ function reply($userId, $text)
     case "休講案内":
       $messages = cancel_info();
       break;
+    case "イベント":
+      $messages = cancel_info();
+      break;
     default:
       break;
   }
