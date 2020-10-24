@@ -124,7 +124,7 @@ function reply($event, $text)
         'replyToken' => $event->replyToken,
         'messages' => [['type' => 'text', 'text' => $text]]
       ];
-      error_log("this is " . json_encode($event, JSON_UNESCAPED_UNICODE));
+      error_log("this is " . json_encode($object, JSON_UNESCAPED_UNICODE));
       break;
     default:
       break;
