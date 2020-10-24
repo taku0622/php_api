@@ -44,6 +44,7 @@ function post($object)
 {
   // JSON形式への変換
   $json = json_encode($object, JSON_UNESCAPED_UNICODE);
+  echo json_encode($object, JSON_UNESCAPED_UNICODE);
   // 送信の準備
   // リクエストヘッダー 設定
   $headers = array(
@@ -118,10 +119,10 @@ function post($object)
 }
 function post_request($url, $json)
 {
-  $json = array(
-    'id' => 100,
-    'msg' => 'hey'
-  );
+  // $json = array(
+  //   'id' => 100,
+  //   'msg' => 'hey'
+  // );
   //curlおじさんを初期化
   $ch = curl_init();
   //配列をhttp_build_queryでエンコードしてあげること
@@ -152,18 +153,18 @@ function post_request($url, $json)
   curl_close($ch);
 
   ##########################################################
-  $data = http_build_query(array('foo' => 'bar', 'name' => 'やまだ', 'age' => '123'), '', '&');
-  $options = array(
-    'http' => array(
-      'method' => 'POST',
-      'header' => "Content-type: application/x-www-form-urlencoded\r\n"
-        . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
-        . "Content-Length: " . strlen($data) . "\r\n",
-      'content' => $data
-    )
-  );
-  $context = stream_context_create($options);
-  $response = file_get_contents('https://bot-php-api.herokuapp.com/', false, $context);
+  // $data = http_build_query(array('foo' => 'bar', 'name' => 'やまだ', 'age' => '123'), '', '&');
+  // $options = array(
+  //   'http' => array(
+  //     'method' => 'POST',
+  //     'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+  //       . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
+  //       . "Content-Length: " . strlen($data) . "\r\n",
+  //     'content' => $data
+  //   )
+  // );
+  // $context = stream_context_create($options);
+  // $response = file_get_contents('https://bot-php-api.herokuapp.com/', false, $context);
   ##########################################################
 }
 
