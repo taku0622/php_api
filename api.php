@@ -29,7 +29,7 @@ function bot($event)
 
 function new_info()
 {
-  $arr = "新着情報1\n新着情報2\n新着情報3\n新着情報4";
+  $arr = "情報をカルーセルに";
   return $arr;
 }
 
@@ -60,14 +60,14 @@ function reply($userId, $text)
   // 送信のデータの作成
   switch ($text) {
     case "新着情報":
-      $text = new_info();
+      $messages = new_info();
       break;
     default:
       break;
   }
   $object = [
     'to' => $userId,
-    'messages' => [['type' => 'text', 'text' => $text]]
+    'messages' => $messages
   ];
   error_log("this is :" . json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信実行
