@@ -27,16 +27,16 @@ function bot($event)
   reply($event, $text);
 }
 
-function new_info($event)
-{
-  $ans = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
-  $object = [
-    'replyToken' => $event->replyToken,
-    'messages' => [['type' => 'text', 'text' => $ans]]
-  ];
-  error_log("this is " . json_encode($event, JSON_UNESCAPED_UNICODE));
-  return $object;
-}
+// function new_info($event)
+// {
+//   $ans = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
+//   $object = [
+//     'replyToken' => $event->replyToken,
+//     'messages' => [['type' => 'text', 'text' => $ans]]
+//   ];
+//   error_log("this is " . json_encode($event, JSON_UNESCAPED_UNICODE));
+//   return $object;
+// }
 
 // LINEサーバへ送信実行関数
 function post($object)
@@ -119,7 +119,12 @@ function reply($event, $text)
   // 送信のデータの作成
   switch ($text) {
     case "新着情報":
-      $object = new_info($event);
+      $text = "新着情報1\n新着情報2\n新着情報3\n新着情報4\n新着情報5";
+      $object = [
+        'replyToken' => $event->replyToken,
+        'messages' => [['type' => 'text', 'text' => $text]]
+      ];
+      error_log("this is " . json_encode($event, JSON_UNESCAPED_UNICODE));
       break;
     default:
       break;
