@@ -37,18 +37,18 @@ function post($object)
   $json = json_encode($object, JSON_UNESCAPED_UNICODE);
   echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
-  $headers = array(
-    "Content-Type: application/json",
-  );
-  $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-  curl_setopt($curl, CURLOPT_POST, true);
-  curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
-  curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-  // 送信の実行
-  $result1 = curl_exec($curl);
-  // 送信の終了
-  curl_close($curl);
+  // $headers = array(
+  //   "Content-Type: application/json",
+  // );
+  // $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
+  // curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+  // curl_setopt($curl, CURLOPT_POST, true);
+  // curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
+  // curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+  // // 送信の実行
+  // $result1 = curl_exec($curl);
+  // // 送信の終了
+  // curl_close($curl);
 }
 
 // LINEサーバへの送信データ生成関数
