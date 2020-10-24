@@ -29,7 +29,7 @@ function bot($event)
 
 function new_info()
 {
-  $arr = "情報をカルーセルに";
+  $arr = [['type' => 'text', 'text' => "情報1"]];
   return $arr;
 }
 
