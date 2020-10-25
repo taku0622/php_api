@@ -68,6 +68,8 @@ function reply($userId, $text)
     case "イベント":
       $messages = event_info();
       break;
+    case "質問":
+      $messages = question();
     default:
       break;
   }
