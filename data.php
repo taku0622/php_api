@@ -29,7 +29,7 @@ function new_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '2020年度第2学期（後期）放送大学特別聴講学生　通信指導問題配付のお知らせ（八王子キャンパス）',
+            'title' => '2020年度第2学期（後期）放送大学特別聴講学生',
             'text' => '放送大学特別聴講学生へ',
             'defaultAction' => [
               'type' => 'uri',
