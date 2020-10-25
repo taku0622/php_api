@@ -229,8 +229,6 @@ function cancel_info()
         'columns' => [
           #----------------------------------------1---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '2020年10月22日 3時限　並列・分散処理',
             'text' => 'コンピュータサイエンス学部 ',
             'defaultAction' => [
@@ -248,8 +246,6 @@ function cancel_info()
           ],
           #----------------------------------------2---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '2020年10月27日 1,2,3時限　スポーツ実技Ⅳ',
             'text' => 'コンディショニングエクササイズ　工学部(学科共通), メディア学部, コンピュータサイエンス学部, 応用生物学部 ',
             'defaultAction' => [
@@ -267,8 +263,6 @@ function cancel_info()
           ],
           #----------------------------------------3---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '2020年11月06日 1時限　知的財産権',
             'text' => '工学部(学科共通) ',
             'defaultAction' => [
