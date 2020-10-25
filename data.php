@@ -47,52 +47,52 @@ function new_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
-            'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
+            'title' => '【CS学部】2020年度「創成課題」教室（10/22更新）',
+            'text' => '属された研究室ごとに、創成課題を行います。',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf'
               ]
             ]
           ], [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
-            'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
+            'title' => 'シェアサイクル設置のお知らせ（八王子キャンパス）',
+            'text' => '八王子キャンパスにシェアサイクルを設置することになりました。',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
               ]
             ]
           ], [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
-            'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
+            'title' => '【図書館】図書館アルバイトを募集します！＜八王子キャンパス＞',
+            'text' => 'お申し込みを お待ちしています。',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/'
               ]
             ]
           ]
