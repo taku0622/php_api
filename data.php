@@ -11,18 +11,18 @@ function new_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '新着情報1',
-            'text' => 'description',
+            'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
+            'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'http://example.com/page/123'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
             ],
             'actions' => [
               [
                 'type' => 'postback',
-                'label' => 'Buy',
-                'data' => 'action=buy&itemid=111'
+                'label' => '詳細',
+                'data' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
               ],
               [
                 'type' => 'postback',
