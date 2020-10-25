@@ -29,36 +29,18 @@ function new_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '2020年度第2学期（後期）放送大学特別聴講学生　通信指導問題配付のお知らせ（八王子キャンパス）',
-            'text' => '放送大学特別聴講学生へ',
+            'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
+            'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020_dai2gakki_housoudaigaku_1022.pdf'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020_dai2gakki_housoudaigaku_1022.pdf'
-              ]
-            ]
-          ],
-          [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【CS学部】2020年度「創成課題」教室（10/22更新）',
-            'text' => '属された研究室ごとに、創成課題を行います。',
-            'defaultAction' => [
-              'type' => 'uri',
-              'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf'
-            ],
-            'actions' => [
-              [
-                'type' => 'uri',
-                'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
               ]
             ]
           ],
@@ -79,8 +61,24 @@ function new_info()
                 'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
               ]
             ]
-          ],
-          [
+          ], [
+            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+            'imageBackgroundColor' => '#FFFFFF',
+            'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
+            'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
+            'defaultAction' => [
+              'type' => 'uri',
+              'label' => 'View detail',
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+            ],
+            'actions' => [
+              [
+                'type' => 'uri',
+                'label' => '詳細',
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+              ]
+            ]
+          ], [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
             'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
