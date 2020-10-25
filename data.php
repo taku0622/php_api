@@ -175,18 +175,18 @@ function important_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => 'シェアサイクル設置のお知らせ（八王子キャンパス）',
-            'text' => '八王子キャンパスにシェアサイクルを設置することになりました。',
+            'title' => 'オンライン大学祭の開催について',
+            'text' => '今年度は新型コロナウイルスの影響',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/'
               ]
             ]
           ],
@@ -194,18 +194,18 @@ function important_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【図書館】図書館アルバイトを募集します！＜八王子キャンパス＞',
-            'text' => 'お申し込みを お待ちしています。',
+            'title' => '【追加募集】令和2年度日本学生支援',
+            'text' => '日本学生支援機構から給付型奨学金及び第二種奨学金',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/'
               ]
             ]
           ]
