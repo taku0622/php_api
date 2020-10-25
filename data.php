@@ -29,18 +29,18 @@ function new_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
-            'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
+            'title' => '2020年度第2学期（後期）放送大学特別聴講学生　通信指導問題配付のお知らせ（八王子キャンパス）',
+            'text' => '放送大学特別聴講学生へ',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020_dai2gakki_housoudaigaku_1022.pdf'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020_dai2gakki_housoudaigaku_1022.pdf'
               ]
             ]
           ],
