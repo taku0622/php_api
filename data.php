@@ -251,7 +251,7 @@ function cancel_info()
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
             'title' => '2020年10月27日 1,2,3時限　スポーツ実技Ⅳ',
-            'text' => '全学部',
+            'text' => 'コンディショニングエクササイズ　工学部(学科共通), メディア学部, コンピュータサイエンス学部, 応用生物学部 ',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
