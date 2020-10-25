@@ -25,6 +25,24 @@ function new_info()
                 'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
               ]
             ]
+          ],
+          [
+            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+            'imageBackgroundColor' => '#FFFFFF',
+            'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
+            'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
+            'defaultAction' => [
+              'type' => 'uri',
+              'label' => 'View detail',
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+            ],
+            'actions' => [
+              [
+                'type' => 'uri',
+                'label' => '詳細',
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+              ]
+            ]
           ]
         ],
         'imageAspectRatio' => 'rectangle',
