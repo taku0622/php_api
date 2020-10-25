@@ -25,34 +25,6 @@ function new_info()
                 'url' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
               ]
             ]
-          ],
-          [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-            'imageBackgroundColor' => '#000000',
-            'title' => '新着情報2',
-            'text' => 'description',
-            'defaultAction' => [
-              'type' => 'uri',
-              'label' => 'View detail',
-              'uri' => 'http://example.com/page/222'
-            ],
-            'actions' => [
-              [
-                'type' => 'postback',
-                'label' => 'Buy',
-                'data' => 'action=buy&itemid=222'
-              ],
-              [
-                'type' => 'postback',
-                'label' => 'Add to cart',
-                'data' => 'action=buy&itemid=222'
-              ],
-              [
-                'type' => 'postback',
-                'label' => 'View detail',
-                'data' => 'action=buy&itemid=222'
-              ]
-            ]
           ]
         ],
         'imageAspectRatio' => 'rectangle',
