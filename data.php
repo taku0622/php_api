@@ -231,18 +231,18 @@ function cancel_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '2020年度後期　履修に関する掲示一覧(八王子キャンパス)',
-            'text' => '履修に関する掲示一覧(八王子キャンパス)',
+            'title' => '2020年10月22日 3時限　並列・分散処理',
+            'text' => 'コンピュータサイエンス学部 ',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
               ]
             ]
           ],
@@ -250,18 +250,18 @@ function cancel_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
-            'text' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
+            'title' => '2020年10月27日 1,2,3時限　スポーツ実技Ⅳ（コンディショニングエクササイズ）',
+            'text' => '工学部(学科共通), メディア学部, コンピュータサイエンス学部, 応用生物学部 ',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
               ]
             ]
           ],
@@ -269,56 +269,18 @@ function cancel_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【八王子みなみ野駅】行きスクールバス発着所の一時変更について',
-            'text' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
+            'title' => '2020年11月06日 1時限　知的財産権',
+            'text' => '工学部(学科共通) ',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/'
-              ]
-            ]
-          ],
-          #----------------------------------------4---------------------------------------------
-          [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
-            'title' => 'オンライン大学祭の開催について',
-            'text' => '今年度は新型コロナウイルスの影響',
-            'defaultAction' => [
-              'type' => 'uri',
-              'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/'
-            ],
-            'actions' => [
-              [
-                'type' => 'uri',
-                'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/'
-              ]
-            ]
-          ],
-          #----------------------------------------5---------------------------------------------
-          [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【追加募集】令和2年度日本学生支援',
-            'text' => '日本学生支援機構から給付型奨学金及び第二種奨学金',
-            'defaultAction' => [
-              'type' => 'uri',
-              'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/'
-            ],
-            'actions' => [
-              [
-                'type' => 'uri',
-                'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
               ]
             ]
           ]
