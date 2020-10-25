@@ -20,9 +20,9 @@ function new_info()
             ],
             'actions' => [
               [
-                'type' => 'postback',
+                'type' => 'url',
                 'label' => '詳細',
-                'data' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+                'url' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
               ],
               [
                 'type' => 'postback',
