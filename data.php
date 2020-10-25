@@ -23,16 +23,6 @@ function new_info()
                 'type' => 'url',
                 'label' => '詳細',
                 'url' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
-              ],
-              [
-                'type' => 'postback',
-                'label' => 'Add to cart',
-                'data' => 'action=buy&itemid=111'
-              ],
-              [
-                'type' => 'postback',
-                'label' => 'View detail',
-                'data' => 'action=buy&itemid=111'
               ]
             ]
           ],
