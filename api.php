@@ -74,6 +74,9 @@ function reply($userId, $text)
     case preg_match('/(履修)$/', $text):
       $messages = ans1();
       break;
+    case preg_match('/(証明書)$/', $text):
+      $messages = ans2();
+      break;
     default:
       $messages = irrelevant();
       break;

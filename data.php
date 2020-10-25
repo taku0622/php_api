@@ -339,7 +339,7 @@ function ans2()
 {
   $messages = [
     "type" => "text",
-    "text" =>  "履修登録についての情報はこちらになります\nhttps://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2017/07/rishutourokutejyun.pdf"
+    "text" =>  "学割・成績証明書などの証明書詳しくはこちらになります\nhttps://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/student-life-hachi/%e5%90%84%e7%a8%ae%e8%a8%bc%e6%98%8e%e6%9b%b8%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/"
   ];
   return $messages;
 }
