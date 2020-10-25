@@ -70,7 +70,9 @@ function reply($userId, $text)
       break;
     case "質問":
       $messages = question();
+      break;
     default:
+      $messages = irrelevant();
       break;
   }
   $object = [

@@ -320,3 +320,16 @@ function question()
   ];
   return $messages;
 }
+
+function irrelevant()
+{
+  $text = "質問内容を入力してください\n
+    (例)\n
+    履修登録について\n
+    証明証発行について\n";
+  $messages = [
+    "type" => "text",
+    "text" => $text
+  ];
+  return $messages;
+}
