@@ -250,7 +250,7 @@ function cancel_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '2020年10月27日 1,2,3時限　スポーツ実技Ⅳ（コンディショニングエクササイズ）',
+            'title' => '2020年10月27日 1,2,3時限　スポーツ実技Ⅳ',
             'text' => '全学部',
             'defaultAction' => [
               'type' => 'uri',
