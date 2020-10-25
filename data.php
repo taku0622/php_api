@@ -137,18 +137,18 @@ function important_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '2020年度第2学期（後期）放送大学特別聴講学生',
-            'text' => '放送大学特別聴講学生へ',
+            'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
+            'text' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020_dai2gakki_housoudaigaku_1022.pdf'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020_dai2gakki_housoudaigaku_1022.pdf'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/'
               ]
             ]
           ],
@@ -156,18 +156,18 @@ function important_info()
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '【CS学部】2020年度「創成課題」教室（10/22更新）',
-            'text' => '属された研究室ごとに、創成課題を行います。',
+            'title' => '【八王子みなみ野駅】行きスクールバス発着所の一時変更について',
+            'text' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/'
             ],
             'actions' => [
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/'
               ]
             ]
           ],
@@ -189,7 +189,9 @@ function important_info()
                 'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
               ]
             ]
-          ], [
+          ],
+          #----------------------------------------5---------------------------------------------
+          [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
             'title' => '【図書館】図書館アルバイトを募集します！＜八王子キャンパス＞',
