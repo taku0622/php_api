@@ -8,7 +8,6 @@ function new_info()
       'template' => [
         'type' => 'carousel',
         'columns' => [
-          #============================================1==========================================
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
@@ -27,7 +26,6 @@ function new_info()
               ]
             ]
           ],
-          #============================================2==========================================
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
@@ -46,7 +44,6 @@ function new_info()
               ]
             ]
           ],
-          #============================================3==========================================
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
@@ -65,7 +62,6 @@ function new_info()
               ]
             ]
           ],
-          #============================================4==========================================
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
@@ -84,7 +80,6 @@ function new_info()
               ]
             ]
           ],
-          #============================================5==========================================
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
