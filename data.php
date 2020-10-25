@@ -312,19 +312,16 @@ function question()
 {
   $messages = [
     "type" => "text",
-    "text" =>  "質問内容を入力してください\n(例)\n履修登録について\n証明証発行について\n"
+    "text" =>  "質問内容を入力してください\n\n(例)\n履修登録について\n証明証発行について"
   ];
   return $messages;
 }
 
-// function irrelevant()
-// {
-//   $messages = [
-//     "type" => "text",
-//     "text" =>  "質問内容を入力してください\n
-//     (例)\n
-//     履修登録について\n
-//     証明証発行について\n"
-//   ];
-//   return $messages;
-// }
+function irrelevant()
+{
+  $messages = [
+    "type" => "text",
+    "text" =>  "解釈できませんでした。申し訳ありませんが違う表現を試していただけますか\n\n(例)\n履修登録について\n証明証発行について"
+  ];
+  return $messages;
+}
