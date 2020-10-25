@@ -22,7 +22,7 @@ function new_info()
               [
                 'type' => 'uri',
                 'label' => '詳細',
-                'url' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
               ]
             ]
           ]
