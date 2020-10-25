@@ -227,59 +227,98 @@ function cancel_info()
       'template' => [
         'type' => 'carousel',
         'columns' => [
+          #----------------------------------------1---------------------------------------------
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
-            'title' => '休講案内1',
-            'text' => 'description',
+            'title' => '2020年度後期　履修に関する掲示一覧(八王子キャンパス)',
+            'text' => '履修に関する掲示一覧(八王子キャンパス)',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'http://example.com/page/123'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/'
             ],
             'actions' => [
               [
-                'type' => 'postback',
-                'label' => 'Buy',
-                'data' => 'action=buy&itemid=111'
-              ],
-              [
-                'type' => 'postback',
-                'label' => 'Add to cart',
-                'data' => 'action=buy&itemid=111'
-              ],
-              [
-                'type' => 'postback',
-                'label' => 'View detail',
-                'data' => 'action=buy&itemid=111'
+                'type' => 'uri',
+                'label' => '詳細',
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/'
               ]
             ]
           ],
+          #----------------------------------------2---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item2.jpg',
-            'imageBackgroundColor' => '#000000',
-            'title' => '休講案内2',
-            'text' => 'description',
+            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+            'imageBackgroundColor' => '#FFFFFF',
+            'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
+            'text' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
             'defaultAction' => [
               'type' => 'uri',
               'label' => 'View detail',
-              'uri' => 'http://example.com/page/222'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/'
             ],
             'actions' => [
               [
-                'type' => 'postback',
-                'label' => 'Buy',
-                'data' => 'action=buy&itemid=222'
-              ],
+                'type' => 'uri',
+                'label' => '詳細',
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/'
+              ]
+            ]
+          ],
+          #----------------------------------------3---------------------------------------------
+          [
+            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+            'imageBackgroundColor' => '#FFFFFF',
+            'title' => '【八王子みなみ野駅】行きスクールバス発着所の一時変更について',
+            'text' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
+            'defaultAction' => [
+              'type' => 'uri',
+              'label' => 'View detail',
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/'
+            ],
+            'actions' => [
               [
-                'type' => 'postback',
-                'label' => 'Add to cart',
-                'data' => 'action=buy&itemid=222'
-              ],
+                'type' => 'uri',
+                'label' => '詳細',
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/'
+              ]
+            ]
+          ],
+          #----------------------------------------4---------------------------------------------
+          [
+            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+            'imageBackgroundColor' => '#FFFFFF',
+            'title' => 'オンライン大学祭の開催について',
+            'text' => '今年度は新型コロナウイルスの影響',
+            'defaultAction' => [
+              'type' => 'uri',
+              'label' => 'View detail',
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/'
+            ],
+            'actions' => [
               [
-                'type' => 'postback',
-                'label' => 'View detail',
-                'data' => 'action=buy&itemid=222'
+                'type' => 'uri',
+                'label' => '詳細',
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/'
+              ]
+            ]
+          ],
+          #----------------------------------------5---------------------------------------------
+          [
+            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+            'imageBackgroundColor' => '#FFFFFF',
+            'title' => '【追加募集】令和2年度日本学生支援',
+            'text' => '日本学生支援機構から給付型奨学金及び第二種奨学金',
+            'defaultAction' => [
+              'type' => 'uri',
+              'label' => 'View detail',
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/'
+            ],
+            'actions' => [
+              [
+                'type' => 'uri',
+                'label' => '詳細',
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/'
               ]
             ]
           ]
