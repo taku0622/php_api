@@ -114,6 +114,7 @@ function important_info()
       'template' => [
         'type' => 'carousel',
         'columns' => [
+          #----------------------------------------1---------------------------------------------
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
@@ -132,6 +133,7 @@ function important_info()
               ]
             ]
           ],
+          #----------------------------------------2---------------------------------------------
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
@@ -150,6 +152,7 @@ function important_info()
               ]
             ]
           ],
+          #----------------------------------------3---------------------------------------------
           [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
@@ -167,7 +170,9 @@ function important_info()
                 'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf'
               ]
             ]
-          ], [
+          ],
+          #----------------------------------------4---------------------------------------------
+          [
             'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
             'imageBackgroundColor' => '#FFFFFF',
             'title' => 'シェアサイクル設置のお知らせ（八王子キャンパス）',
