@@ -264,6 +264,25 @@ function cancel_info()
                 'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
               ]
             ]
+          ],
+          #----------------------------------------3---------------------------------------------
+          [
+            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
+            'imageBackgroundColor' => '#FFFFFF',
+            'title' => '2020年11月06日 1時限　知的財産権',
+            'text' => '工学部(学科共通) ',
+            'defaultAction' => [
+              'type' => 'uri',
+              'label' => 'View detail',
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
+            ],
+            'actions' => [
+              [
+                'type' => 'uri',
+                'label' => '詳細',
+                'uri' => 'https://service.cloud.teu.ac.jp/inside2/hachiouji/hachioji_common/cancel/'
+              ]
+            ]
           ]
         ],
         'imageAspectRatio' => 'rectangle',
