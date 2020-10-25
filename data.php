@@ -9,8 +9,6 @@ function new_info()
         'type' => 'carousel',
         'columns' => [
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
             'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
             'defaultAction' => [
@@ -27,8 +25,6 @@ function new_info()
             ]
           ],
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '2020年度第2学期（後期）放送大学特別聴講学生',
             'text' => '放送大学特別聴講学生へ',
             'defaultAction' => [
@@ -45,8 +41,6 @@ function new_info()
             ]
           ],
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '【CS学部】2020年度「創成課題」教室（10/22更新）',
             'text' => '属された研究室ごとに、創成課題を行います。',
             'defaultAction' => [
@@ -61,9 +55,8 @@ function new_info()
                 'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf'
               ]
             ]
-          ], [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
+          ],
+          [
             'title' => 'シェアサイクル設置のお知らせ（八王子キャンパス）',
             'text' => '八王子キャンパスにシェアサイクルを設置することになりました。',
             'defaultAction' => [
@@ -78,9 +71,8 @@ function new_info()
                 'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
               ]
             ]
-          ], [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
+          ],
+          [
             'title' => '【図書館】図書館アルバイトを募集します！＜八王子キャンパス＞',
             'text' => 'お申し込みを お待ちしています。',
             'defaultAction' => [
@@ -116,8 +108,6 @@ function important_info()
         'columns' => [
           #----------------------------------------1---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '2020年度後期　履修に関する掲示一覧(八王子キャンパス)',
             'text' => '履修に関する掲示一覧(八王子キャンパス)',
             'defaultAction' => [
@@ -135,8 +125,6 @@ function important_info()
           ],
           #----------------------------------------2---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
             'text' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
             'defaultAction' => [
@@ -154,8 +142,6 @@ function important_info()
           ],
           #----------------------------------------3---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '【八王子みなみ野駅】行きスクールバス発着所の一時変更について',
             'text' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
             'defaultAction' => [
@@ -173,8 +159,6 @@ function important_info()
           ],
           #----------------------------------------4---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => 'オンライン大学祭の開催について',
             'text' => '今年度は新型コロナウイルスの影響',
             'defaultAction' => [
@@ -192,8 +176,6 @@ function important_info()
           ],
           #----------------------------------------5---------------------------------------------
           [
-            'thumbnailImageUrl' => 'https://example.com/bot/images/item1.jpg',
-            'imageBackgroundColor' => '#FFFFFF',
             'title' => '【追加募集】令和2年度日本学生支援',
             'text' => '日本学生支援機構から給付型奨学金及び第二種奨学金',
             'defaultAction' => [
