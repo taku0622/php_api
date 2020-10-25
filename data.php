@@ -325,3 +325,21 @@ function irrelevant()
   ];
   return $messages;
 }
+
+function ans1()
+{
+  $messages = [
+    "type" => "text",
+    "text" =>  "履修登録についての情報はこちらになります\nhttps://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2017/07/rishutourokutejyun.pdf"
+  ];
+  return $messages;
+}
+
+function ans2()
+{
+  $messages = [
+    "type" => "text",
+    "text" =>  "履修登録についての情報はこちらになります\nhttps://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2017/07/rishutourokutejyun.pdf"
+  ];
+  return $messages;
+}
