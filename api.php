@@ -38,7 +38,7 @@ function post($object)
   echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
   $to = $object->to;
-  $text = $object->messages->text
+  $text = $object->messages->text;
   $object2 = [
     'to' => $to,
     'messages' => $text
