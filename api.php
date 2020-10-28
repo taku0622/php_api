@@ -58,17 +58,7 @@ function reply($userId, $text)
     case "イベント":
       $messages = event_info();
       break;
-      // case "質問":
-      //   $messages = question();
-      //   break;
-      // case preg_match('/(履修)$/', $text):
-      //   $messages = ans1();
-      //   break;
-      // case preg_match('/(証明書)$/', $text):
-      //   $messages = ans2();
-      //   break;
     default:
-      // $messages = irrelevant();
       $messages = watson($userId, $text);
       break;
   }
