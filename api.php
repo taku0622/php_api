@@ -37,8 +37,8 @@ function post($object)
   // JSON形式への変換
   echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
-  $to = $object->to;
-  $text = $object->messages->text;
+  $to = $object["to"];
+  $text = $object["messages"]["text"];
   error_log("to:" . $to . "     text:" . $text);
   $object2 = [
     'to' => $to,
