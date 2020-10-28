@@ -35,9 +35,15 @@ function bot($event)
 function post($object)
 {
   // JSON形式への変換
-  $json = json_encode($object, JSON_UNESCAPED_UNICODE);
   echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
+  $to = $object->to;
+  $text = $object->messages->text
+  $object2 = [
+    'to' => $to,
+    'messages' => $text
+  ];
+  $json = json_encode($object2, JSON_UNESCAPED_UNICODE);
   $headers = array(
     "Content-Type: application/json",
   );
