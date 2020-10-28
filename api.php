@@ -1,6 +1,7 @@
 <?php
 //  共通ファイル読み込み
 require_once('data.php');
+require_once('to1015b.php');
 
 // リクエストの取得
 $input = file_get_contents('php://input');
@@ -16,6 +17,7 @@ if (!empty($input)) {
       // botの実行
       error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
       bot($event);
+      to1015b($event);
     } catch (Exception $e) {
       // エラーMsg作成
       $errMsg = "ERROR:" . $e->getMessage();
@@ -36,27 +38,6 @@ function post($object)
 {
   // JSON形式への変換
   echo json_encode($object, JSON_UNESCAPED_UNICODE);
-
-  $to = $object["to"];
-  $text = $object["messages"]["text"];
-  error_log("to:" . $to . "     text:" . $text);
-  $object2 = [
-    'to' => $to,
-    'messages' => $text
-  ];
-  $json = json_encode($object2, JSON_UNESCAPED_UNICODE);
-  $headers = array(
-    "Content-Type: application/json",
-  );
-  $curl = curl_init("https://chatbot-1015-b.herokuapp.com/index.php");
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-  curl_setopt($curl, CURLOPT_POST, true);
-  curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
-  curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-  // 送信の実行
-  $result1 = curl_exec($curl);
-  // 送信の終了
-  curl_close($curl);
 }
 
 // LINEサーバへの送信データ生成関数
