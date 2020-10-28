@@ -64,7 +64,9 @@ function reply($userId, $text)
   }
   $object = [
     'to' => $userId,
-    'messages' => $messages
+    'messages' => [
+      $messages
+    ]
   ];
   // error_log("this is :" . json_encode($object, JSON_UNESCAPED_UNICODE));
   // 送信実行
