@@ -18,7 +18,7 @@ if (!empty($input)) {
       // botの実行
       error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
       bot($event);
-      to1015b($event);
+      // to1015b($event);
     } catch (Exception $e) {
       // エラーMsg作成
       $errMsg = "ERROR:" . $e->getMessage();
