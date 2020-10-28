@@ -68,7 +68,7 @@ function watson($userId, $text)
     "type" => "text",
     "text" =>  $outputText
   ];
-  return $messages;
+  return [$messages];
 }
 
 # WATSON
