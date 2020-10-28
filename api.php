@@ -39,6 +39,7 @@ function post($object)
 
   $to = $object->to;
   $text = $object->messages->text;
+  error_log("to:" . $to . "     text:" . $text);
   $object2 = [
     'to' => $to,
     'messages' => $text
