@@ -1,6 +1,7 @@
 <?php
 function to1015b($event)
 {
+  // ※1015bのnginx_app.confで"index.php"に設定する必要
   // ユーザー入力を取得
   $text = $event->message->text;
   $userId = $event->source->userId;
