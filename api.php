@@ -2,6 +2,7 @@
 //  共通ファイル読み込み
 require_once('data.php');
 require_once('to1015b.php');
+require_once('watson.php');
 
 // リクエストの取得
 $input = file_get_contents('php://input');
@@ -57,17 +58,18 @@ function reply($userId, $text)
     case "イベント":
       $messages = event_info();
       break;
-    case "質問":
-      $messages = question();
-      break;
-    case preg_match('/(履修)$/', $text):
-      $messages = ans1();
-      break;
-    case preg_match('/(証明書)$/', $text):
-      $messages = ans2();
-      break;
+      // case "質問":
+      //   $messages = question();
+      //   break;
+      // case preg_match('/(履修)$/', $text):
+      //   $messages = ans1();
+      //   break;
+      // case preg_match('/(証明書)$/', $text):
+      //   $messages = ans2();
+      //   break;
     default:
-      $messages = irrelevant();
+      // $messages = irrelevant();
+      $messages = watson($userId, $text);
       break;
   }
   $object = [
