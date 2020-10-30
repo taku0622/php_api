@@ -6,9 +6,9 @@ require_once('watson.php');
 
 // リクエストの取得
 $input = file_get_contents('php://input');
-error_log("######## input is ########\n");
-error_log($input . "\n");
-error_log("##########################\n");
+error_log("######## input is ########");
+error_log($input);
+error_log("##########################");
 
 // リクエストが空でないことを確認
 if (!empty($input)) {
@@ -18,9 +18,9 @@ if (!empty($input)) {
   foreach ($events as $event) {
     try {
       // botの実行
-      error_log("######## event is ########\n");
-      error_log(json_encode($event, JSON_UNESCAPED_UNICODE) . "\n");
-      error_log("##########################\n");
+      error_log("######## event is ########");
+      error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
+      error_log("##########################");
 
       bot($event);
       // to1015b($event);
@@ -43,9 +43,9 @@ function bot($event)
 function post($object)
 {
   // heroku logに表示
-  error_log("######## output is ########\n");
-  error_log(json_encode($object, JSON_UNESCAPED_UNICODE) . "\n");
-  error_log("###########################\n");
+  error_log("######## output is ########");
+  error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
+  error_log("###########################");
 
   // JSON形式への変換
   echo json_encode($object, JSON_UNESCAPED_UNICODE);
