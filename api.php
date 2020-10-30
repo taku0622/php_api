@@ -69,14 +69,14 @@ function reply($userId, $text)
       $messages = watson($userId, $text);
       break;
   }
-  $object = array(
-    'to' => $userId,
-    'messages' => [$messages]
-  );
   // $object = [
-  //   'to' => [$userId],
-  //   'messages' => $messages
+  //   'to' => $userId,
+  //   'messages' => [$messages]
   // ];
+  $object = [
+    'to' => [$userId],
+    'messages' => $messages
+  ];
   // 送信実行
   post($object);
 }
