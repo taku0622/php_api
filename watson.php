@@ -64,10 +64,10 @@ function watson($userId, $text)
   // Conversationからの返答を取得
   $outputText = $json['output']['text'][count($json['output']['text']) - 1];
   ###############################
-  $messages = [
+  $messages = array(
     "type" => "text",
     "text" =>  $outputText
-  ];
+  );
   // $messages = [
   //   "type" => "text",
   //   "content" =>  $outputText
