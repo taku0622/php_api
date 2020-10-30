@@ -69,10 +69,10 @@ function reply($userId, $text)
       $messages = watson($userId, $text);
       break;
   }
-  $object = [
+  $object = array(
     'to' => $userId,
     'messages' => [$messages]
-  ];
+  );
   // $object = [
   //   'to' => [$userId],
   //   'messages' => $messages
