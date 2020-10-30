@@ -68,6 +68,10 @@ function watson($userId, $text)
     "type" => "text",
     "text" =>  $outputText
   ];
+  // $messages = [
+  //   "type" => "text",
+  //   "content" =>  $outputText
+  // ];
   return $messages;
 }
 

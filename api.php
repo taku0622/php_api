@@ -41,7 +41,7 @@ function bot($event)
 function post($object)
 {
   // heroku logに表示
-  error_log("################################### output is ##################################");
+  error_log("################################## output is ##################################");
   error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 
   // JSON形式への変換
@@ -73,6 +73,10 @@ function reply($userId, $text)
     'to' => $userId,
     'messages' => $messages
   ];
+  // $object = [
+  //   'to' => [$userId],
+  //   'messages' => $messages
+  // ];
   // 送信実行
   post($object);
 }
