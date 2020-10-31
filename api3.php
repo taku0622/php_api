@@ -1,77 +1,35 @@
 <?php
-$json = file_get_contents("php://input");
-if (!isset($json)) {
-  echo json_encode($json, JSON_UNESCAPED_UNICODE);
-} else {
-  echo "no data";
-}
-error_log("form api3.php" . json_encode($json, JSON_UNESCAPED_UNICODE));
+require_once('data.php');
 
+$userId = getenv('USERID');
+$messages = important_info();
 
-// {
-//   "type": "template",
-//   "altText": "this is a carousel template",
-//   "template": {
-//       "type": "carousel",
-//       "columns": [
-//           {
-//             "thumbnailImageUrl": "https://example.com/bot/images/item1.jpg",
-//             "imageBackgroundColor": "#FFFFFF",
-//             "title": "this is menu",
-//             "text": "description",
-//             "defaultAction": {
-//                 "type": "uri",
-//                 "label": "View detail",
-//                 "uri": "http://example.com/page/123"
-//             },
-//             "actions": [
-//                 {
-//                     "type": "postback",
-//                     "label": "Buy",
-//                     "data": "action=buy&itemid=111"
-//                 },
-//                 {
-//                     "type": "postback",
-//                     "label": "Add to cart",
-//                     "data": "action=add&itemid=111"
-//                 },
-//                 {
-//                     "type": "uri",
-//                     "label": "View detail",
-//                     "uri": "http://example.com/page/111"
-//                 }
-//             ]
-//           },
-//           {
-//             "thumbnailImageUrl": "https://example.com/bot/images/item2.jpg",
-//             "imageBackgroundColor": "#000000",
-//             "title": "this is menu",
-//             "text": "description",
-//             "defaultAction": {
-//                 "type": "uri",
-//                 "label": "View detail",
-//                 "uri": "http://example.com/page/222"
-//             },
-//             "actions": [
-//                 {
-//                     "type": "postback",
-//                     "label": "Buy",
-//                     "data": "action=buy&itemid=222"
-//                 },
-//                 {
-//                     "type": "postback",
-//                     "label": "Add to cart",
-//                     "data": "action=add&itemid=222"
-//                 },
-//                 {
-//                     "type": "uri",
-//                     "label": "View detail",
-//                     "uri": "http://example.com/page/222"
-//                 }
-//             ]
-//           }
-//       ],
-//       "imageAspectRatio": "rectangle",
-//       "imageSize": "cover"
-//   }
-// }
+$object = [
+  'to' => [$userId],
+  'messages' => $messages
+];
+
+// heroku logに表示
+error_log("########################## push important info is ##########################");
+error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
+
+// JSON形式への変換
+// echo json_encode($object, JSON_UNESCAPED_UNICODE);
+
+// JSON形式への変換
+$json =  json_encode($object, JSON_UNESCAPED_UNICODE);
+
+//curl実行
+$ch = curl_init("https://api.line.me/v2/bot/message/reply");
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+  'Content-Type: application/json; charser=UTF-8',
+  'Authorization: Bearer ' . getenv('CHANNEL_ACCESS_TOKEN')
+));
+$result = curl_exec($ch);
+curl_close($ch);
+
+var_dump($result);
