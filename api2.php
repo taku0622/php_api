@@ -28,14 +28,20 @@ $options = array(
 );
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: x-www-form-urlencoded'));
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($ch, CURLOPT_VERBOSE, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt_array($ch, $options);
-$result = curl_exec($ch);
+// $result = curl_exec($ch);
+$response = curl_exec($ch);
+
+// $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+// $header = substr($response, 0, $header_size);
+// $body = substr($response, $header_size);
+// $result = json_decode($body, true);
 curl_close($ch);
 // return $result;
-var_dump($result);
+var_dump($response);
