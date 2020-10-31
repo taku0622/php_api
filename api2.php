@@ -41,6 +41,6 @@ if (CURLE_OK !== $errno) {
 
 error_log($body);
 error_log($info);
-return [$body, $info];
+echo [$body, $info];
 
 curl_close($ch);
