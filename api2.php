@@ -20,27 +20,22 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 $json =  json_encode($object, JSON_UNESCAPED_UNICODE);
 
 //curl実行
-$ch = curl_init("https://chatbot-1015-b.herokuapp.com/");
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$url = "https://chatbot-1015-b.herokuapp.com/";
+$options = array(
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_AUTOREFERER => true,
+);
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch, CURLOPT_VERBOSE, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  'Content-Type: application/json; charser=UTF-8'
-));
-
-$body = curl_exec($ch);
-$info = curl_getinfo($ch);
-
-$errno = curl_errno($ch);
-$error = curl_error($ch);
-
-if (CURLE_OK !== $errno) {
-  throw new RuntimeException($error, $errno);
-}
-
-error_log($body);
-error_log($info);
-echo [$body, $info];
-
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt_array($ch, $options);
+$result = curl_exec($ch);
 curl_close($ch);
+// return $result;
+var_dump($result);
