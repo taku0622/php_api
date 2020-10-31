@@ -248,7 +248,7 @@ function important_info()
         'label' => '詳細'
       ],
       [
-        'title' => '',
+        'title' => '【八王子みなみ野駅】行きスクールバス発着所',
         'content' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
         'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/',
         'label' => '詳細'
