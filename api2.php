@@ -20,7 +20,7 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 $json =  json_encode($object, JSON_UNESCAPED_UNICODE);
 
 //curl実行
-$ch = curl_init("https://url");
+$ch = curl_init("https://tut-line-bot-test.glitch.me/push");
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
