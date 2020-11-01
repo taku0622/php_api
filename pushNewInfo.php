@@ -1,8 +1,10 @@
 <?php
 require_once('data.php');
 
-// $userId = getenv('USERID');
-$userId = "2323423455n3j";
+$userId = [
+  "U6e0f4008a090ff5b5bef0323cae3428e"
+];
+// $userId = "2323423455n3j";
 $messages = [
   [
     'type' => 'template',
@@ -49,38 +51,35 @@ $messages = [
   ]
 ];
 
-//POSTデータ
-$data = [
+$object = [
   'to' => $userId,
   'messages' => $messages
 ];
 
-// URLを指定
-$url = "https://tut-line-bot-test.glitch.me/push";
 
-// POST用関数
-function http_post($url, $data)
-{
-  $data_url = $data;
-  $data_len = strlen($data_url);
+// heroku logに表示
+error_log("########################## push important info is ##########################");
+error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 
-  return array(
-    'content' =>  file_get_contents(
-      $url,
-      false,
-      stream_context_create(
-        array('http' =>
-        array(
-          'method' => 'POST',
-          'header' => "Content-Type: text/plain\r\n" . "User-Agent: php.file_get_contents\r\n" . "Content-Length: $data_len\r\n",
-          'content' => $data_url
-        ))
-      )
-    ),
-    'headers' => $http_response_header
-  );
-}
+// JSON形式への変換
+// echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
-// 送信
-$result = http_post($url, $data);
-var_dump($result);
+// JSON形式への変換
+$data = json_encode($object, JSON_UNESCAPED_UNICODE);
+// echo "##################\n";
+// echo gettype($data);
+// echo $data;
+// echo "##################\n";
+$options = array(
+  'http' => array(
+    'method' => 'POST',
+    'header' => "Content-type: text/plain\n"
+      . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
+      . "Content-Length: " . strlen($data) . "\r\n",
+    'content' => $data
+  )
+);
+$context = stream_context_create($options);
+$response = file_get_contents('https://tut-line-bot-test.glitch.me/push', false, $context);
+// echo gettype($response);
+echo $response;
