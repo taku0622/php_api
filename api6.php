@@ -79,6 +79,7 @@ $object = [
   'messages' => $messages
 ];
 
+
 // heroku logに表示
 error_log("########################## push important info is ##########################");
 error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
