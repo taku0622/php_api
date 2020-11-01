@@ -85,6 +85,7 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 
 // JSON形式への変換
 $data = http_build_query($object, '', '&');
+echo gettype($data);
 $options = array(
   'http' => array(
     'method' => 'POST',
@@ -96,5 +97,5 @@ $options = array(
 );
 $context = stream_context_create($options);
 $response = file_get_contents('https://tut-line-bot-test.glitch.me/push', false, $context);
-
-var_dump($response);
+// echo gettype($response);
+echo $response;
