@@ -70,7 +70,7 @@ function reply($userId, $text)
       break;
   }
   $object = [
-    'to' => [$userId],
+    'to' => $userId,
     'messages' => $messages
   ];
   // $object = [
