@@ -1,91 +1,60 @@
 <?php
 require_once('data.php');
 
-$userId = getenv('USERID');
+// $userId = getenv('USERID');
+$userId = "2323423455n3j";
 $messages = [
   [
     'type' => 'template',
-    'altText' => '重要情報',
+    'altText' => '新着情報',
     'template' => [
       'type' => 'carousel',
       'columns' => [
         [
-          'title' => '2020年度後期　履修に関する掲示一覧(八王子キャンパス)',
-          'text' => '履修に関する掲示一覧(八王子キャンパス)',
+          'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
+          'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
           'defaultAction' => [
             'type' => 'uri',
             'label' => 'View detail',
-            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/'
+            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
           ],
           'actions' => [
             [
               'type' => 'uri',
               'label' => '詳細',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
             ]
           ]
         ],
         [
-          'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
-          'text' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
+          'title' => 'シェアサイクル設置のお知らせ（八王子キャンパス）',
+          'text' => '八王子キャンパスにシェアサイクルを設置することになりました。',
           'defaultAction' => [
             'type' => 'uri',
             'label' => 'View detail',
-            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/'
+            'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
           ],
           'actions' => [
             [
               'type' => 'uri',
               'label' => '詳細',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
             ]
           ]
         ],
         [
-          'title' => '【八王子みなみ野駅】行きスクールバス発着所の一時変更について',
-          'text' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
+          'title' => '【図書館】図書館アルバイトを募集します！＜八王子キャンパス＞',
+          'text' => 'お申し込みを お待ちしています。',
           'defaultAction' => [
             'type' => 'uri',
             'label' => 'View detail',
-            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/'
+            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/'
           ],
           'actions' => [
             [
               'type' => 'uri',
               'label' => '詳細',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/'
-            ]
-          ]
-        ],
-        [
-          'title' => 'オンライン大学祭の開催について',
-          'text' => '今年度は新型コロナウイルスの影響',
-          'defaultAction' => [
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/'
-          ],
-          'actions' => [
-            [
-              'type' => 'uri',
-              'label' => '詳細',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/'
-            ]
-          ]
-        ],
-        [
-          'title' => '【追加募集】令和2年度日本学生支援',
-          'text' => '日本学生支援機構から給付型奨学金及び第二種奨学金',
-          'defaultAction' => [
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/'
-          ],
-          'actions' => [
-            [
-              'type' => 'uri',
-              'label' => '詳細',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/'
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/'
             ]
           ]
         ]
@@ -95,12 +64,9 @@ $messages = [
     ]
   ]
 ];
-
-
-
 $object = [
   'to' => $userId,
-  'messages' => [$messages]
+  'messages' => $messages
 ];
 
 // heroku logに表示
