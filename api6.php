@@ -2,8 +2,8 @@
 require_once('data.php');
 
 $userId = [
-  "Uc10f34878ecea7828bf09317816b662e",
-  "U6e0f4008a090ff5b5bef0323cae3428e"
+  getenv('USERID'),
+  getenv('USERID2')
 ];
 // $userId = "2323423455n3j";
 $messages = [
