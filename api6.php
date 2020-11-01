@@ -84,28 +84,17 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 // echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
 // JSON形式への変換
-$json =  json_encode($object, JSON_UNESCAPED_UNICODE);
-
-
-$url = 'https://tut-line-bot-test.glitch.me/push';
-
-$header = array(
-  "Content-Type: application/x-www-form-urlencoded",
-  "Content-Length: " . strlen($data)
-);
-
+$data = http_build_query($object, '', '&');
 $options = array(
   'http' => array(
-    'method'  => 'POST',
-    'content' => $json,
-    'header' =>  'User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko'
+    'method' => 'POST',
+    'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+      . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
+      . "Content-Length: " . strlen($data) . "\r\n",
+    'content' => $data
   )
 );
+$context = stream_context_create($options);
+$response = file_get_contents('https://tut-line-bot-test.glitch.me/push', false, $context);
 
-$context  = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-// $result = json_decode($result);
-
-var_dump($result);
-echo $result;
-// return $result;
+var_dump($response);
