@@ -75,7 +75,7 @@ $messages = [
 //   ]
 // ];
 $object = [
-  'to' => [$userId],
+  'to' => $userId,
   'messages' => $messages
 ];
 
