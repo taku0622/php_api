@@ -61,7 +61,7 @@ $url = "https://tut-line-bot-test.glitch.me/push";
 // POST用関数
 function http_post($url, $data)
 {
-  $data_url = http_build_query($data);
+  $data_url = $data;
   $data_len = strlen($data_url);
 
   return array(

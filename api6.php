@@ -84,7 +84,7 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 // echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
 // JSON形式への変換
-$data = http_build_query($object, '', '&');
+$data = json_encode($object, JSON_UNESCAPED_UNICODE);
 // echo "##################\n";
 // echo gettype($data);
 // echo $data;
@@ -92,7 +92,7 @@ $data = http_build_query($object, '', '&');
 $options = array(
   'http' => array(
     'method' => 'POST',
-    'header' => "Content-type: application/x-www-form-urlencoded\r\n"
+    'header' => "Content-type: text/plain\n"
       . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
       . "Content-Length: " . strlen($data) . "\r\n",
     'content' => $data
