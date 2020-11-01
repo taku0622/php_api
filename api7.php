@@ -41,22 +41,6 @@ $messages = [
               'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
             ]
           ]
-        ],
-        [
-          'title' => '【図書館】図書館アルバイトを募集します！＜八王子キャンパス＞',
-          'text' => 'お申し込みを お待ちしています。',
-          'defaultAction' => [
-            'type' => 'uri',
-            'label' => 'View detail',
-            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/'
-          ],
-          'actions' => [
-            [
-              'type' => 'uri',
-              'label' => '詳細',
-              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/'
-            ]
-          ]
         ]
       ],
       'imageAspectRatio' => 'rectangle',
@@ -64,6 +48,29 @@ $messages = [
     ]
   ]
 ];
+// $messages = [
+//   'type' => 'array',
+//   'content' => [
+//     [
+//       'title' => '【2020年度後期　履修に関する掲示一覧(八王子キャンパス)',
+//       'content' => '履修に関する掲示一覧(八王子キャンパス)',
+//       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/',
+//       'label' => '詳細'
+//     ],
+//     [
+//       'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
+//       'content' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
+//       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/',
+//       'label' => '詳細'
+//     ],
+//     [
+//       'title' => 'オンライン大学祭の開催について',
+//       'content' => '今年度は新型コロナウイルスの影響',
+//       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/',
+//       'label' => '詳細'
+//     ]
+//   ]
+// ];
 $object = [
   'to' => $userId,
   'messages' => $messages
@@ -93,6 +100,8 @@ $options = array(
 
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
-$result = json_decode($result);
+// $result = json_decode($result);
 
 var_dump($result);
+echo $result;
+// return $result;
