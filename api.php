@@ -71,7 +71,7 @@ function reply($userId, $text)
   }
   $object = [
     'to' => $userId,
-    'messages' => [$messages]
+    'messages' => $messages
   ];
   // $object = [
   //   'to' => [$userId],
