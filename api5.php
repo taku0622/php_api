@@ -1,29 +1,86 @@
 <?php
+require_once('data.php');
 
-// 送信データ
-$data = array(
-  "key1" => "value1",
-  "key2" => "value2"
-);
+// $userId = getenv('USERID');
+$userId = "2323423455n3j";
+$messages = [
+  [
+    'type' => 'template',
+    'altText' => '新着情報',
+    'template' => [
+      'type' => 'carousel',
+      'columns' => [
+        [
+          'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
+          'text' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
+          'defaultAction' => [
+            'type' => 'uri',
+            'label' => 'View detail',
+            'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+          ],
+          'actions' => [
+            [
+              'type' => 'uri',
+              'label' => '詳細',
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/'
+            ]
+          ]
+        ],
+        [
+          'title' => 'シェアサイクル設置のお知らせ（八王子キャンパス）',
+          'text' => '八王子キャンパスにシェアサイクルを設置することになりました。',
+          'defaultAction' => [
+            'type' => 'uri',
+            'label' => 'View detail',
+            'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
+          ],
+          'actions' => [
+            [
+              'type' => 'uri',
+              'label' => '詳細',
+              'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf'
+            ]
+          ]
+        ]
+      ],
+      'imageAspectRatio' => 'rectangle',
+      'imageSize' => 'cover'
+    ]
+  ]
+];
 
-// URLエンコードされたクエリ文字列を生成
-$data = http_build_query($data, "", "&");
+//POSTデータ
+$data = [
+  'to' => $userId,
+  'messages' => $messages
+];
 
-// ストリームコンテキストのオプションを作成
-$options = array(
-  // HTTPコンテキストオプションをセット
-  'http' => array(
-    'method' => 'POST',
-    'header' => 'Content-Type: application/x-www-form-urlencoded',
-    'content' => $data
-  )
-);
+// URLを指定
+$url = "https://tut-line-bot-test.glitch.me/push";
 
-// ストリームコンテキストの作成
-$context = stream_context_create($options);
+// POST用関数
+function http_post($url, $data)
+{
+  $data_url = http_build_query($data);
+  $data_len = strlen($data_url);
 
-// POST送信
-$contents = file_get_contents('https://tut-line-bot-test.glitch.me/', false, $context);
+  return array(
+    'content' =>  file_get_contents(
+      $url,
+      false,
+      stream_context_create(
+        array('http' =>
+        array(
+          'method' => 'POST',
+          'header' => "Content-Type: application/x-www-form-urlencoded\r\n" . "User-Agent: php.file_get_contents\r\n" . "Content-Length: $data_len\r\n",
+          'content' => $data_url
+        ))
+      )
+    ),
+    'headers' => $http_response_header
+  );
+}
 
-// reception.php のレスポンスを表示
-echo $contents;
+// 送信
+$result = http_post($url, $data);
+var_dump($result);

@@ -85,7 +85,10 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 
 // JSON形式への変換
 $data = http_build_query($object, '', '&');
-echo gettype($data);
+// echo "##################\n";
+// echo gettype($data);
+// echo $data;
+// echo "##################\n";
 $options = array(
   'http' => array(
     'method' => 'POST',
