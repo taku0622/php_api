@@ -72,7 +72,7 @@ function http_post($url, $data)
         array('http' =>
         array(
           'method' => 'POST',
-          'header' => "Content-Type: text\r\n" . "User-Agent: php.file_get_contents\r\n" . "Content-Length: $data_len\r\n",
+          'header' => "Content-Type: text/plain\r\n" . "User-Agent: php.file_get_contents\r\n" . "Content-Length: $data_len\r\n",
           'content' => $data_url
         ))
       )
