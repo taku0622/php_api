@@ -20,7 +20,7 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 $json =  json_encode($object, JSON_UNESCAPED_UNICODE);
 
 //curl実行
-$url = "https://chatbot-1015-b.herokuapp.com/";
+$url = "https://tut-line-bot-test.glitch.me/push";
 $options = array(
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => true,
