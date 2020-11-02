@@ -74,7 +74,7 @@ $options = array(
   'http' => array(
     'method' => 'POST',
     'header' => "Content-type: text/plain\n"
-      . "User-Agent: php.file_get_contents\r\n" // 適当に名乗ったりできます
+      . "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36\r\n" // 適当に名乗ったりできます
       . "Content-Length: " . strlen($data) . "\r\n",
     'content' => $data
   )
