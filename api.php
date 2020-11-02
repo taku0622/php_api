@@ -8,13 +8,11 @@ require_once('watson.php');
 $input = file_get_contents('php://input');
 error_log("################################## input is ##################################");
 error_log($input);
-error_log($input->to);
-error_log($input["to"]);
 
 // リクエストが空でないことを確認
 if (!empty($input)) {
   // イベントの取得
-  $events = json_decode($input)->events;
+  $event = json_decode($input)->to;
   // 各イベントに対するBotプログラムの実行
   // foreach ($events as $event) {
   error_log("################################## event is ##################################");
