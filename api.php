@@ -15,12 +15,12 @@ if (!empty($input)) {
   // イベントの取得
   $events = json_decode($input)->events;
   // 各イベントに対するBotプログラムの実行
-  foreach ($events as $event) {
-    error_log("################################## event is ##################################");
-    error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
+  // foreach ($events as $event) {
+  error_log("################################## event is ##################################");
+  error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
 
-    bot($event);
-    // to1015b($event);
+  bot($event);
+  // to1015b($event);
   // }
 }
 
