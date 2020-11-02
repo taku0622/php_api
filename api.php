@@ -12,7 +12,8 @@ error_log($input);
 // リクエストが空でないことを確認
 if (!empty($input)) {
   // イベントの取得
-  $event = json_decode($input)->to;
+  $event = json_decode($input);
+  error_log(json_encode($event["to"], JSON_UNESCAPED_UNICODE));
   // 各イベントに対するBotプログラムの実行
   // foreach ($events as $event) {
   error_log("################################## event is ##################################");
