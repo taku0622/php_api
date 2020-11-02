@@ -7,7 +7,8 @@ require_once('watson.php');
 // リクエストの取得
 $input = file_get_contents('php://input');
 error_log("################################## input is ##################################");
-error_log($input);
+// error_log($input);
+error_log(json_encode($input, JSON_UNESCAPED_UNICODE));
 
 // リクエストが空でないことを確認
 if (!empty($input)) {
@@ -15,18 +16,12 @@ if (!empty($input)) {
   $events = json_decode($input)->events;
   // 各イベントに対するBotプログラムの実行
   foreach ($events as $event) {
-    try {
-      // botの実行
-      error_log("################################## event is ##################################");
-      error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
+    error_log("################################## event is ##################################");
+    error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
 
-      bot($event);
-      // to1015b($event);
-    } catch (Exception $e) {
-      // エラーMsg作成
-      $errMsg = "ERROR:" . $e->getMessage();
-    }
-  }
+    bot($event);
+    // to1015b($event);
+  // }
 }
 
 function bot($event)
