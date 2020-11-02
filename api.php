@@ -7,8 +7,8 @@ require_once('watson.php');
 // リクエストの取得
 $input = file_get_contents('php://input');
 error_log("################################## input is ##################################");
-// error_log($input);
-error_log(json_encode($input, JSON_UNESCAPED_UNICODE));
+error_log($input);
+error_log(json_decode($input));
 
 // リクエストが空でないことを確認
 if (!empty($input)) {
