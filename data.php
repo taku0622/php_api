@@ -283,7 +283,7 @@ function important_info($userId, $text)
     ]
   ];
   $messages = [
-    'content' => $userId,
+    'to' => $userId,
     'type' => 'multiple',
     'altText' => $text,
     'contents' => $content
