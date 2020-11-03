@@ -51,7 +51,7 @@ function reply($userId, $text)
       $messages = new_info();
       break;
     case "重要情報":
-      $messages = important_info();
+      $messages = important_info($userId, $text);
       break;
     case "休講案内":
       $messages = cancel_info();

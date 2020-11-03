@@ -132,7 +132,7 @@ function new_info()
   return $messages;
 }
 
-function important_info()
+function important_info($userId, $text)
 {
   // $messages = [
   //   [
@@ -262,13 +262,31 @@ function important_info()
   //     ]
   //   ]
   // ];
-  $messages = [
-    'content' => [
+  $content = [
+    [
       'title' => '【2020年度後期　履修に関する掲示一覧(八王子キャンパス)',
       'content' => '履修に関する掲示一覧(八王子キャンパス)',
       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/',
       'label' => '詳細'
+    ],
+    [
+      'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
+      'content' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
+      'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/',
+      'label' => '詳細'
+    ],
+    [
+      'title' => '【八王子みなみ野駅】行きスクールバス発着所',
+      'content' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
+      'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/',
+      'label' => '詳細'
     ]
+  ];
+  $messages = [
+    'content' => $userId,
+    'type' => 'multiple',
+    'altText' => $text,
+    'contents' => $content
   ];
   return $messages;
 }
