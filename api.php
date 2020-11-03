@@ -8,29 +8,29 @@ require_once('watson.php');
 $input = file_get_contents('php://input');
 error_log("################################## input is ##################################");
 error_log($input);
-error_log(gettype($input));
 
 // リクエストが空でないことを確認
 if (!empty($input)) {
   // イベントの取得
-  $event = json_decode($input);
-  error_log(json_encode($event["to"], JSON_UNESCAPED_UNICODE));
+  $events = json_decode($input, true);
   // 各イベントに対するBotプログラムの実行
-  // foreach ($events as $event) {
-  error_log("################################## event is ##################################");
-  error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
+  foreach ($events as $event) {
+    error_log("################################## event is ##################################");
+    error_log(json_encode($event, JSON_UNESCAPED_UNICODE));
 
-  bot($event);
-  // to1015b($event);
-  // }
+    bot($event);
+    // to1015b($event);
+  }
 }
 
 function bot($event)
 {
   // ユーザー入力を取得
-  $text = $event->message->text;
-  $userId = $event->source->userId;
-  reply($userId, $text);
+  $text = $event["text"];
+  foreach ($event["to"] as $userid) {
+    $userId = $userid;
+    reply($userId, $text);
+  }
 }
 
 // LINEサーバへ送信実行関数
@@ -65,10 +65,11 @@ function reply($userId, $text)
       $messages = watson($userId, $text);
       break;
   }
-  $object = [
-    'to' => $userId,
-    'messages' => $messages
-  ];
+  $object = $messages;
+  // $object = [
+  //   'to' => $userId,
+  //   'messages' => $messages
+  // ];
   // $object = [
   //   'to' => [$userId],
   //   'messages' => $messages
