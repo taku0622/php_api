@@ -27,10 +27,8 @@ function bot($event)
 {
   // ユーザー入力を取得
   $text = $event["text"];
-  foreach ($event["to"] as $userid) {
-    $userId = $userid;
-    reply($userId, $text);
-  }
+  $userId = $event["to"];
+  reply($userId, $text);
 }
 
 // LINEサーバへ送信実行関数
@@ -62,7 +60,7 @@ function reply($userId, $text)
       $messages = event_info();
       break;
     default:
-      $messages = watson($userId, $text);
+      $messages = watson($userId[0], $text);
       break;
   }
   $object = $messages;
