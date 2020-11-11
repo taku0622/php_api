@@ -96,38 +96,38 @@ function new_info()
   ];
   // $messages = [
   //   'type' => 'array',
-  //   'content' => [
-  //     [
-  //       'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
-  //       'content' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/',
-  //       'label' => '詳細'
-  //     ],
-  //     [
-  //       'title' => '2020年度第2学期（後期）放送大学特別聴講学生',
-  //       'content' => '放送大学特別聴講学生へ',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020_dai2gakki_housoudaigaku_1022.pdf',
-  //       'label' => '詳細'
-  //     ],
-  //     [
-  //       'title' => '【CS学部】2020年度「創成課題」教室（10/22更新）',
-  //       'content' => '属された研究室ごとに、創成課題を行います。',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf',
-  //       'label' => '詳細'
-  //     ],
-  //     [
-  //       'title' => 'シェアサイクル設置のお知らせ（八王子キャンパス）',
-  //       'content' => '八王子キャンパスにシェアサイクルを設置することになりました。',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf',
-  //       'label' => '詳細'
-  //     ],
-  //     [
-  //       'title' => '【図書館】図書館アルバイトを募集します！＜八王子キャンパス＞',
-  //       'content' => 'お申し込みを お待ちしています。',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/',
-  //       'label' => '詳細'
-  //     ]
+  // 'content' => [
+  //   [
+  //     'title' => '【図書館】リクエストの結果報告＜八王子キャンパス＞',
+  //     'content' => '10月（前半）の選書の結果、以下のリクエストが採択されました。',
+  //     'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/64555/',
+  //     'label' => '詳細'
+  //   ],
+  //   [
+  //     'title' => '2020年度第2学期（後期）放送大学特別聴講学生',
+  //     'content' => '放送大学特別聴講学生へ',
+  //     'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020_dai2gakki_housoudaigaku_1022.pdf',
+  //     'label' => '詳細'
+  //   ],
+  //   [
+  //     'title' => '【CS学部】2020年度「創成課題」教室（10/22更新）',
+  //     'content' => '属された研究室ごとに、創成課題を行います。',
+  //     'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/2020CS_souseikadai_kyousitu20201022.pdf',
+  //     'label' => '詳細'
+  //   ],
+  //   [
+  //     'title' => 'シェアサイクル設置のお知らせ（八王子キャンパス）',
+  //     'content' => '八王子キャンパスにシェアサイクルを設置することになりました。',
+  //     'uri' => 'https://service.cloud.teu.ac.jp/inside2/wp-content/uploads/2020/10/shearingu_settiosirase_1021.pdf',
+  //     'label' => '詳細'
+  //   ],
+  //   [
+  //     'title' => '【図書館】図書館アルバイトを募集します！＜八王子キャンパス＞',
+  //     'content' => 'お申し込みを お待ちしています。',
+  //     'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/12658/',
+  //     'label' => '詳細'
   //   ]
+  // ]
   // ];
   return $messages;
 }
@@ -230,36 +230,36 @@ function important_info($userId, $text)
   // $messages = [
   //   'type' => 'array',
   //   'content' => [
-  //     [
-  //       'title' => '【2020年度後期　履修に関する掲示一覧(八王子キャンパス)',
-  //       'content' => '履修に関する掲示一覧(八王子キャンパス)',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/',
-  //       'label' => '詳細'
-  //     ],
-  //     [
-  //       'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
-  //       'content' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/',
-  //       'label' => '詳細'
-  //     ],
-  //     [
-  //       'title' => '【八王子みなみ野駅】行きスクールバス発着所',
-  //       'content' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/',
-  //       'label' => '詳細'
-  //     ],
-  //     [
-  //       'title' => 'オンライン大学祭の開催について',
-  //       'content' => '今年度は新型コロナウイルスの影響',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/',
-  //       'label' => '詳細'
-  //     ],
-  //     [
-  //       'title' => '【追加募集】令和2年度日本学生支援',
-  //       'content' => '日本学生支援機構から給付型奨学金及び第二種奨学金',
-  //       'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/',
-  //       'label' => '詳細'
-  //     ]
+  // [
+  //   'title' => '【2020年度後期　履修に関する掲示一覧(八王子キャンパス)',
+  //   'content' => '履修に関する掲示一覧(八王子キャンパス)',
+  //   'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/2018/',
+  //   'label' => '詳細'
+  // ],
+  // [
+  //   'title' => '2020年度後期 遠隔システム（Zoom）による相談受け付けについて',
+  //   'content' => '前期に引き続き後期も遠隔システム（Zoom）で相談を受け付けます。',
+  //   'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/93230/',
+  //   'label' => '詳細'
+  // ],
+  // [
+  //   'title' => '【八王子みなみ野駅】行きスクールバス発着所',
+  //   'content' => '【八王子みなみ野駅】行きスクールバス発着所を一時変更いたしますので、ご確認ください。',
+  //   'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95242/',
+  //   'label' => '詳細'
+  // ],
+  // [
+  //   'title' => 'オンライン大学祭の開催について',
+  //   'content' => '今年度は新型コロナウイルスの影響',
+  //   'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95052/',
+  //   'label' => '詳細'
+  // ],
+  // [
+  //   'title' => '【追加募集】令和2年度日本学生支援',
+  //   'content' => '日本学生支援機構から給付型奨学金及び第二種奨学金',
+  //   'uri' => 'https://service.cloud.teu.ac.jp/inside2/archives/95044/',
+  //   'label' => '詳細'
+  // ]
   //   ]
   // ];
   $content = [
