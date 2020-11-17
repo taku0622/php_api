@@ -17,7 +17,7 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 $json =  json_encode([$object], JSON_UNESCAPED_UNICODE);
 
 //curl実行
-$url = "https://tut-php-api.herokuapp.com/api/v1/messages/reply";
+$url = "https://tut-php-api.herokuapp.com/api/v4/m/reply";
 $options = array(
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => true,
