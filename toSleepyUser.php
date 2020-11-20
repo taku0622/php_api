@@ -1,16 +1,16 @@
 <?php
 $object = [
-  "id" => "U6e0f4008a090ff5b5bef0323cae3428e",
-  "number" => "B0118276",
-  "push_new" => false,
-  "push_important" => false,
+  "id" => "U1a6fed7afc52dd14d4722309a5eaff58",
+  "number" => "C0117253",
+  "push_new" => true,
+  "push_important" => true,
   "push_cancel" => true,
   "push_event" => true,
 ];
 
 
 // heroku logに表示
-error_log("########################## push important info is ##########################");
+error_log("########################## push info is ##########################");
 error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 
 // JSON形式への変換
