@@ -1,5 +1,5 @@
 <?php
-$object =
+$object = [
   [
     "day" => '2020年11月29日 3時限',
     "name" => '並列・分散処理',
@@ -10,7 +10,19 @@ $object =
     "note" => '課題を課す',
     "up" => '2020年11月06日11時57分',
     "from" => '学務課教務係',
-  ];
+  ],
+  [
+    "day" => '2020年12月21日 2時限',
+    "name" => 'コミュニケーション論',
+    "instructor" => '佐藤さん',
+    "department" => '工学部',
+    "grade" => '2年次',
+    "class" => '',
+    "note" => '補講の予定',
+    "up" => '2020年11月16日11時57分',
+    "from" => '学務課教務係',
+  ]
+];
 
 
 // heroku logに表示
@@ -21,7 +33,7 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 // echo json_encode($object, JSON_UNESCAPED_UNICODE);
 
 // JSON形式への変換
-$json =  json_encode([$object], JSON_UNESCAPED_UNICODE);
+$json =  json_encode($object, JSON_UNESCAPED_UNICODE);
 
 //curl実行
 $url = "https://tut-php-api.herokuapp.com/api/v1/infos/lecture";
