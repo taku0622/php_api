@@ -1,26 +1,17 @@
 <?php
 $object = [
   [
-    "day" => '2020年12月18日 1.2時限',
-    "name" => '3D機械設計製作【4Q1】',
-    "instructor" => '松尾　芳樹',
-    "department" => '機械工学科',
-    "grade" => '2年次',
-    "class" => '',
-    "note" => '補講実施予定',
-    "up" => '2020年11月06日11時57分',
-    "from" => '学務課教務係',
+    "title" => '創薬学I',
+    "instructor" => '加藤　輝',
+    "Reference" => '赤路健一、他 著「ベーシック創薬化学」化学同人',
   ],
   [
-    "day" => '2021年01月05日 3時限',
-    "name" => 'メディア特別講義Ⅱ',
-    "instructor" => '佐々木　和朗、吉岡　英樹',
-    "department" => 'メディア学部',
-    "grade" => '2年次',
-    "class" => '',
-    "note" => '補講実施予定',
-    "up" => '2020年11月09日11時07分',
-    "from" => '学務課教務係',
+    "title" => '食品製造学',
+    "instructor" => '野嶽　勇一',
+    "Reference" => '食品加工・貯蔵学　栄養科学シリーズNEXT　講談社
+食品加工貯蔵学　新スタンダード栄養・食品シリーズ　東京化学同人
+栄養科学イラストレイテッド食品学Ⅰ　羊土社
+栄養科学イラストレイテッド食品学Ⅱ　羊土社 ',
   ]
 ];
 
@@ -36,7 +27,7 @@ error_log(json_encode($object, JSON_UNESCAPED_UNICODE));
 $json =  json_encode($object, JSON_UNESCAPED_UNICODE);
 
 //curl実行
-$url = "https://tut-php-api.herokuapp.com/api/v1/infos/lecture";
+$url = "https://tut-php-api.herokuapp.com/api/v1/infos/reference";
 $options = array(
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_FOLLOWLOCATION => true,
